@@ -1,0 +1,31 @@
+baseurl = "/"
+languageCode = "en-gb"
+title = "gingerBill"
+theme = "gb-theme"
+googleAnalytics = ""
+disqusShortname = ""
+preserveTaxonomyNames = true
+footnotereturnlinkcontents = "↩"
+disableHugoGeneratorInject = true
+
+staticDir = ["static"]
+
+[permalinks]
+    article = "/article/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "Articles"
+    url = "/article/"
+    weight = 2
+[[menu.main]]
+    name = "Subscribe"
+    url = "/article/index.xml"
+
+[params]
+    description = ""
+    footer = "&copy; 2007&ndash;2019 Ginger Bill"
+
