@@ -20,13 +20,9 @@ Original Comments:
 <br>
 
 There will never be software exceptions in the traditional sense. I hate the entire philosophy behind the concept.
-
 Go does have exceptions with the defer, panic, recover approach. They are weird on purpose. Odin could have something similar for exceptional cases.
-
 You can the exact same semantics as a try except block by using a switch in statement. The same is true in Go. The difference is that the stack does not need to be unwinded and it's structural control flow.
-
 Odin has discriminated unions, enums, bit sets, distinct type definitions, any type, and more. Odin also have multiple return values. Use the type system to your advantage.
-
 I do hate how most languages handle "errors". Treat errors like any other piece of code. Handle errors there and then and don't pass them up the stack. You make your mess; you clean it.
 
 ---------
