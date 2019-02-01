@@ -9,10 +9,10 @@ tags:
   - memory allocation theory odin
 ---
 
-Memory allocation seems to be something many people struggle with it. Many languages try to automatically handle memory for you using different strategies: garbage collection (GC), automatic reference counting (ARC), resource acquisition is initialization (RAII), and ownership semantics. However, trying to abstract away memory allocation comes at a higher cost than most people realize.
+Memory allocation seems to be something many people struggle with. Many languages try to automatically handle memory for you using different strategies: garbage collection (GC), automatic reference counting (ARC), resource acquisition is initialization (RAII), and ownership semantics. However, trying to abstract away memory allocation comes at a higher cost than most people realize.
 
 Most people are taught to think of memory in terms of the stack and the heap, where the stack is automatically grown for a procedure call, and the heap is some magical thing that you can use to get memory that needs to live longer than the stack. This dualistic approach to memory is the wrong way to think about it. It gives the programmer the mental model that the stack is a special form of memory[^stack-pointer] and that the heap is magical in nature.
-[^stack-pointer]: Most architectures do have a dedicated stack register but that is added because it is used quite frequently and practically made sense.
+[^stack-pointer]: Most architectures have register dedicated as a pointer to the stack, that is added because it is used frequently and pragmatically makes sense to do so.
 
 Modern operating systems virtualize memory on a per-process basis. This means that the addresses used within your program/process are specific to that program/process only. Due to operating systems virtualizing the memory space for us, this allows us to think about memory in a completely different way. Memory is not longer this dualistic model of _the stack_ and _the heap_ but rather a monistic model where everything is virtual memory. Some of that virtual address space is reserved for procedure stack frames, some of it is reserved for things required by the operating system, and the rest we can use for whatever we want. This may sound similar to original dualistic model that I stated previously, however, the biggest difference is realizing that the memory virtually-mapped and linear, and that you can split that linear memory space in sections.
 
@@ -58,7 +58,7 @@ Memory within these generations usually get allocated and freed at the same time
 
 * **Permanent Allocation**: Memory that is never freed until the end of the program. This memory is persistent during program lifetime.
 
-* **Transient Allocation**: Memory that is cycle-based lifetime. This memory only persists for the "cycle" and is freed at the end of this cycle. An example of a cycle could be a frame within a graphical program (e.g. a game) or an update loop.
+* **Transient Allocation**: Memory that has a cycle-based lifetime. This memory only persists for the "cycle" and is freed at the end of this cycle. An example of a cycle could be a frame within a graphical program (e.g. a game) or an update loop.
 
 * **Scratch/Temporary Allocation**: Short lived, quick memory that I just want to allocate and forget about. A common case for this is when I want to generate a string and output it to a log.
 
@@ -72,9 +72,9 @@ The same localist thought process can be applied the memory-space/size of which 
 
 # The Compiler's Knowledge of the Program
 
-In languages with automatic memory management, many people assume that the compiler knows a lot about the usage and lifetimes of your program. __This is false__. You know much more about your program than the compiler could ever know. In the case of languages with ownership semantics (e.g. Rust, C++11), the language may aid you in certain cases, but it struggles to know (if it is at all possible) to know when it should pre-allocate or free in bulk. This is compiler ignorance can lead to a lot of performance issues.
+In languages with automatic memory management, many people assume that the compiler knows a lot about the usage and lifetimes of your program. __This is false__. You know much more about your program than the compiler could ever know. In the case of languages with ownership semantics (e.g. Rust, C++11), the language may aid you in certain cases, but it struggles to know (if it is at all possible) when it should pre-allocate or free in bulk. This is compiler ignorance can lead to a lot of performance issues.
 
-My person issue with regards to ownership semantics is that it naturally focuses on the ownership of single objects rather than in systems[^ownership-systems]. Such languages also have the tendency to couple the concept of ownership with the concept of lifetime, which are not necessarily the linked.
+My personal issue with regards to ownership semantics is that it naturally focuses on the ownership of single objects rather than in systems[^ownership-systems]. Such languages also have the tendency to couple the concept of ownership with the concept of lifetime, which are not necessarily linked.
 
 [^ownership-systems]: I know in languages such as Rust, you can describe the lifetime of an object to be linked to a system however, with the memory allocation strategies I will be discussing later, the Rust code that would be required pretty much acts as if you will bypass the ownership semantics entirely and have a liberal use of `unsafe`.
 
