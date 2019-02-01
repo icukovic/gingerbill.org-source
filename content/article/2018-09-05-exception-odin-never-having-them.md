@@ -1,5 +1,5 @@
 ---
-title: Exceptions - And Why Odin Will Never Have Them
+title: Exceptions --- And Why Odin Will Never Have Them
 author: Ginger Bill
 date: '2018-09-05'
 categories:
@@ -17,8 +17,6 @@ Original Comments:
 * <https://github.com/odin-lang/Odin/issues/256#issuecomment-418073701>
 * <https://github.com/odin-lang/Odin/issues/256#issuecomment-418289626>
 
-<br>
-
 There will never be software exceptions in the traditional sense. I hate the entire philosophy behind the concept.
 Go does have exceptions with the defer, panic, recover approach. They are weird on purpose. Odin could have something similar for exceptional cases.
 You can the exact same semantics as a try except block by using a switch in statement. The same is true in Go. The difference is that the stack does not need to be unwinded and it's structural control flow.
@@ -26,7 +24,6 @@ Odin has discriminated unions, enums, bit sets, distinct type definitions, any t
 I do hate how most languages handle "errors". Treat errors like any other piece of code. Handle errors there and then and don't pass them up the stack. You make your mess; you clean it.
 
 ---------
-
 
 To expand on what I mean by this statement:
 

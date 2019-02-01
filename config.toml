@@ -5,8 +5,11 @@ theme = "gb-theme"
 googleAnalytics = ""
 disqusShortname = ""
 preserveTaxonomyNames = true
-footnotereturnlinkcontents = "↩"
+# footnotereturnlinkcontents = "↩"
 disableHugoGeneratorInject = true
+
+pygmentsCodeFences = false
+pygmentsStyle = "manni"
 
 staticDir = ["static"]
 
