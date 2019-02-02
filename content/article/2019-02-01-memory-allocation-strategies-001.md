@@ -65,9 +65,9 @@ Memory within these generations usually get allocated and freed at the same time
 
 ## Memory Hierarchies
 
-As I previously stated, the monistic model of memory is preferred model of memory (on modern systems). This generational approach to memory orders the lifetime of memory in a hierarchical fashion. You could still have pseudo-permanent memory within a transient allocator or a scratch allocator as the difference is thinking about the relative usage of that memory with respect to its lifetime. Thinking locally about how memory is used aids with conceptualizing and managing memory --- the human brain can only hold so much.
+As I previously stated, the monistic model of memory is the preferred model of memory (on modern systems). This generational approach to memory orders the lifetime of memory in a hierarchical fashion. You could still have pseudo-permanent memory within a transient allocator or a scratch allocator, as the difference is thinking about the relative usage of that memory with respect to its lifetime. Thinking locally about how memory is used aids with conceptualizing and managing memory --- the human brain can only hold so much.
 
-The same localist thought process can be applied the memory-space/size of which I will be discussing in later articles in this series.
+The same localist thought process can be applied to the memory-space/size of which I will be discussing in later articles in this series.
 
 
 # The Compiler's Knowledge of the Program
