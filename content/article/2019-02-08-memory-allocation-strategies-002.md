@@ -14,7 +14,7 @@ tags:
 
 # Linear Allocation
 
-The first memory allocation strategy that I will cover is the also one of the simplest ones: linear allocation. As the name suggests,  memory is allocated linearly. Throughout this series, I will be using to concept of an _allocator_ as a means to allocate this memory. A linear allocator, is also known by other names such as an Arena or Region-based allocator. In this article, I will refer to this allocator an a _Arena_.
+The first memory allocation strategy that I will cover is the also one of the simplest ones: linear allocation. As the name suggests,  memory is allocated linearly. Throughout this series, I will be using the concept of an _allocator_ as a means to allocate this memory. A linear allocator, is also known by other names such as an Arena or Region-based allocator. In this article, I will refer to this allocator an a _Arena_.
 
 ## Basic Logic
 
@@ -175,7 +175,7 @@ void arena_init(Arena *a, void *backing_buffer, size_t backing_buffer_length) {
 
 ## Free
 
-As I previously stated, `alloc_free` does absolutely nothing. It exists purely for completeness.
+As I previously stated, `arena_free` does absolutely nothing. It exists purely for completeness.
 
 ```c
 void arena_free(Arena *a, void *ptr) {
