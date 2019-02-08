@@ -5,7 +5,6 @@
 	<h1><span class="title">{{ .Title | markdownify }}</span></h1>
 	<p class="info">
 	{{ if (gt .Params.date 0) }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
-	{{ with .Params.author }}<span class="author">{{ . }}</span>{{ end }}
 	</p>
 </header>
 {{ .Content }}
