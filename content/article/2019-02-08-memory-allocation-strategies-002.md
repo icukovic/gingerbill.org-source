@@ -14,7 +14,7 @@ tags:
 
 # Linear Allocation
 
-The first memory allocation strategy that I will cover is the also one of the simplest ones: linear allocation. As the name suggests,  memory is allocated linearly. Throughout this series, I will be using the concept of an _allocator_ as a means to allocate this memory. A linear allocator, is also known by other names such as an Arena or Region-based allocator. In this article, I will refer to this allocator an a _Arena_.
+The first memory allocation strategy that I will cover is also one of the simplest ones: linear allocation. As the name suggests,  memory is allocated linearly. Throughout this series, I will be using the concept of an _allocator_ as a means to allocate this memory. A linear allocator, is also known by other names such as an Arena or Region-based allocator. In this article, I will refer to this allocator an a _Arena_.
 
 ## Basic Logic
 
