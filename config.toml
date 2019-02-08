@@ -16,6 +16,11 @@ staticDir = ["static"]
 [permalinks]
     article = "/article/:year/:month/:day/:slug/"
 
+[taxonomies]
+    category = "category"
+    tag      = "tags"
+    series   = "series"
+
 [[menu.main]]
     name = "Home"
     url = "/"

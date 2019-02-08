@@ -1,12 +1,14 @@
 ---
 title: Memory Allocation Strategies - Part 1
+description: Thinking About Allocation
 slug: memory-allocation-strategies-001
 author: Ginger Bill
 date: '2019-02-01'
+series: ["Memory Allocation Strategies"]
 categories:
-  - memory allocation theory memory-allocation-strategies
+  - memory allocation theory
 tags:
-  - memory allocation theory odin
+  - memory allocation theory odin c
 ---
 
 Memory allocation seems to be something many people struggle with. Many languages try to automatically handle memory for you using different strategies: garbage collection (GC), automatic reference counting (ARC), resource acquisition is initialization (RAII), and ownership semantics. However, trying to abstract away memory allocation comes at a higher cost than most people realize.

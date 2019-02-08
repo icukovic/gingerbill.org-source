@@ -2,10 +2,16 @@
 <main>
 <article class="article-meta">
 <header>
-	<h1><span class="title">{{ .Title | markdownify }}</span></h1>
-	<p class="info">
-	{{ if (gt .Params.date 0) }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
-	</p>
+	<h1>{{ .Title | markdownify }}</h1>
+	{{ with .Description }} <h2>{{ . | markdownify }}</h2>{{ end }}
+	<div class="info">
+		{{ with .Params.series }}<p><span class="series">Series:</span>
+			{{ range . }}<a href="{{ "series/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+		</p>{{ end }}
+		<p>
+		{{ if (gt .Params.date 0) }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
+		</p>
+	</div>
 </header>
 {{ .Content }}
 </article>
