@@ -123,7 +123,9 @@ struct Arena {
 
 void *arena_alloc_align(Arena *a, size_t size, size_t align) {
 	// Align 'curr_offset' forward to the specified alignment
-	uintptr_t offset = align_forward(a->curr_offset, align);
+	uintptr_t curr_ptr = (uintptr_t)a->buf + (uintptr_t)a->curr_offset;
+	uintptr_t offset = align_forward(curr_ptr, align);
+	offset -= (uintptr_t)a->buf; // Change to relative offset
 
 	// Check to see if the backing memory has space left
 	if (offset+size <= a->buf_len) {
