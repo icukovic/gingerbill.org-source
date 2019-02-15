@@ -18,7 +18,7 @@ In the previous article, we looked at the [linear/arena allocator](/article/2019
 
 **Note:** A stack-like allocator means that the allocator acts like a data structure following the _last-in, first-out_ (LIFO) principle. This has nothing to do with _the stack_ or the _stack frame_.
 
-The stack allocator is the natural evolution from the arena allocator. The approach with the stack allocator is to manage memory in a stack-like fashion following the _last-in first-out_ (LIFO) principle. As with the arena allocator, an offset into the memory block will be stored and will be moved forwards on every allocation. The difference is that the offset can also be moved backwards when memory is _freed_. With an arena, you could only free all the memory all at once.
+The stack allocator is the natural evolution from the arena allocator. The approach with the stack allocator is to manage memory in a stack-like fashion following the LIFO principle. As with the arena allocator, an offset into the memory block will be stored and will be moved forwards on every allocation. The difference is that the offset can also be moved backwards when memory is _freed_. With an arena, you could only free all the memory all at once.
 
 ## Basic Logic
 
