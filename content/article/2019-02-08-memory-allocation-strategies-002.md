@@ -22,13 +22,13 @@ The arena's logic only requires an offset (or pointer) to state the end of the l
 [^other-data]: Other data may stored such as the offset of the beginning of the previous allocation or allocation count.
 
 <center>
-![Virtual Memory](/images/memory-allocation-strategies/linear_allocator.png)
+![Linear Allocator Layout](/images/memory-allocation-strategies/linear_allocator.png)
 </center>
 
 To allocate some memory from the arena, it is as simple as moving the offset (or pointer) forward. In [Big-O notation](https://wikipedia.org/wiki/Big_O_notation), the allocation has complexity of _**O(1)**_ (constant).
 
 <center>
-![Virtual Memory](/images/memory-allocation-strategies/linear_allocator_alloc.png)
+![Linear Allocator Alloc](/images/memory-allocation-strategies/linear_allocator_alloc.png)
 </center>
 
 Due to being the simplest allocator possible, the arena allocator does not allow the user to free certain blocks of memory. The memory is usually freed all at once.
@@ -258,7 +258,7 @@ arena_init(&a, backing_buffer, 256);
 
 You have now implemented your very first custom allocator! The full source code is [available here](/code/memory-allocation-strategies/part002.c).
 
-In the next article, I will be talking about the basic evolution of the _arena allocator_ in to a _stack allocator_.
+In the next article, I will be talking about the basic evolution of the _arena allocator_ in to a [_stack allocator_](/article/2019/02/15/memory-allocation-strategies-003/).
 
 
 # Extra Features

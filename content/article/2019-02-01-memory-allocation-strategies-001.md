@@ -1,6 +1,6 @@
 ---
 title: Memory Allocation Strategies - Part 1
-description: Thinking About Allocation
+description: Thinking About Memory and Allocation
 slug: memory-allocation-strategies-001
 author: Ginger Bill
 date: '2019-02-01'

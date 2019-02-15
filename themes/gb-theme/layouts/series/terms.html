@@ -10,6 +10,7 @@
 			{{ range (where .Pages.Reverse "Section" "!=" "") }}
 			  <li>
 			    <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
+          {{ with .Description }} <p class="description">{{ . | markdownify }}</p>{{ end }}
 			  </li>{{ end }}
 			</ul>
 			{{ end }}
