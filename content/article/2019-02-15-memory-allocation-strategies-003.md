@@ -18,27 +18,28 @@ In the previous article, we looked at the [linear/arena allocator](/article/2019
 
 **Note:** A stack-like allocator means that the allocator acts like a data structure following the _last-in, first-out_ (LIFO) principle. This has nothing to do with _the stack_ or the _stack frame_.
 
-The stack allocator is the natural evolution from the arena allocator. The approach with the stack allocator is to manage memory in a stack-like fashion following the LIFO principle. As with the arena allocator, an offset into the memory block will be stored and will be moved forwards on every allocation. The difference is that the offset can also be moved backwards when memory is _freed_. With an arena, you could only free all the memory all at once.
+The stack allocator is the natural evolution from the arena allocator. The approach with the stack allocator is to manage memory in a stack-like fashion following the LIFO principle. Therefore, like a stack of books, if you put something on the top of the stack earlier, you need to pick that book up first before you get one underneath.
+
+As with the arena allocator, an offset into the memory block will be stored and will be moved forwards on every allocation. The difference is that the offset can also be moved backwards when memory is _freed_. With an arena, you could only free all the memory all at once.
 
 ## Basic Logic
 
 As with the extended arena in the [previous article](/article/2019/02/08/memory-allocation-strategies-002/), the offset of the previous allocation needs to be tracked. This is required in order to free memory on a _per-allocation_ basis. One approach is to store a _header_ which stores information about that allocation. This _header_ means that the allocator can know how far back it should move the offset to free that memory.
 
 <center>
-![Stack Allocator Layout](/images/memory-allocation-strategies/stack_allocator.png)
+![Stack Allocator Layout](/images/memory-allocation-strategies/stack_allocator.svg)
 </center>
 
 To allocate some memory from the stack allocator, as with the arena allocator, it is as simple as moving the offset forward whilst accounting for the header. In [Big-O notation](https://wikipedia.org/wiki/Big_O_notation), the allocation has complexity of _**O(1)**_ (constant).
 
-
 <center>
-![Stack Allocator Alloc](/images/memory-allocation-strategies/stack_allocator_alloc.png)
+![Stack Allocator Alloc](/images/memory-allocation-strategies/stack_allocator_alloc.svg)
 </center>
 
 To free a block, the header that is stored before the block of memory can be read in order to move the offset backwards. In Big-O notation, the freeing of this memory has complexity of _**O(1)**_ (constant).
 
 <center>
-![Stack Allocator Free](/images/memory-allocation-strategies/stack_allocator_free.png)
+![Stack Allocator Free](/images/memory-allocation-strategies/stack_allocator_free.svg)
 </center>
 
 ## Header Storage
@@ -84,10 +85,10 @@ struct Stack_Allocation_Header {
 };
 ```
 
-This padding stores the amount of bytes to has to be placed before the header in order to have the new allocation correctly aligned.
+This padding stores the amount of bytes that has to be placed before the header in order to have the new allocation correctly aligned.
 
 <center>
-![Stack Allocator Header](/images/memory-allocation-strategies/stack_allocator_header.png)
+![Stack Allocator Header](/images/memory-allocation-strategies/stack_allocator_header.svg)
 </center>
 
 **Note**: Storing the padding as a byte does limit the the maximum alignment that can used with this stack allocator to 128 bytes. If you require a higher alignment, increase the size of integer used to store the padding. To calculate the maximum alignment that the padding can be used for, use this equation:
