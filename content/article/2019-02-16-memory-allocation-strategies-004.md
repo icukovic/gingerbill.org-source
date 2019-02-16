@@ -20,7 +20,7 @@ A pool allocator is a bit different from the previous allocation strategies that
 
 Pool allocators are extremely useful when you need to allocate chunks of memory of the same size which need are created and destroy dynamically, especially in a random order. Pools also have the benefit that arenas and stacks have in that they provide very little fragmentation and allocate/free in constant time _**O(1)**_.
 
-Pool allocators are usually used to allocate _groups_ of things at once which share the same lifetime. An example could be within a game that creates and destroys entities in batches where each entity within a batch share the same lifetime.
+Pool allocators are usually used to allocate _groups_ of "things" at once which share the same lifetime. An example could be within a game that creates and destroys entities in batches where each entity within a batch share the same lifetime.
 
 # Basic Logic
 
@@ -208,6 +208,6 @@ void pool_free_all(Pool *p) {
 
 # Conclusion
 
-The pool allocator is a very useful allocator for when you need to allocator thinks in _chunks_ and the things within those chunks share the same lifetime. The full source code is [available here](/code/memory-allocation-strategies/part004.c).
+The pool allocator is a very useful allocator for when you need to allocator "things" in _chunks_ and the things within those chunks share the same lifetime. The full source code is [available here](/code/memory-allocation-strategies/part004.c).
 
 In this next article(s), I will discuss virtual memory and allocationg of physical pages from the OS.
