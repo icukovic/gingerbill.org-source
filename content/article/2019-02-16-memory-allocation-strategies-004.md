@@ -36,7 +36,7 @@ The question is how are these allocations and frees determined? And how do they 
 
 ## Free Lists
 
-A [free list](https://wikipedia.org/wiki/Free_list) is a data structure that internally stores a [linked-list](https://wikipedia.org/wiki/Linked_list) of the free slots/chunks within the memory buffer. The nodes of the list are stored inplace as this means that there does not need to be another data structure (e.g. array, list, etc) to keep track of the free slots. The data is _only_ stored _within_ the backing buffer of the pool allocator.
+A [free list](https://wikipedia.org/wiki/Free_list) is a data structure that internally stores a [linked-list](https://wikipedia.org/wiki/Linked_list) of the free slots/chunks within the memory buffer. The nodes of the list are stored in-place as this means that there does not need to be another data structure (e.g. array, list, etc) to keep track of the free slots. The data is _only_ stored _within_ the backing buffer of the pool allocator.
 
 <center>
 ![Pool Allocator List](/images/memory-allocation-strategies/pool_allocator_list.svg)
@@ -46,7 +46,7 @@ The general approach is to store a header at the beginning of the chunk (not bef
 [^free-chunk]: If there is not an available free chunk, it will point to nothing (`NULL`).
 
 <center>
-![Pool Allocator List Inplace](/images/memory-allocation-strategies/pool_allocator_list_inplace.svg)
+![Pool Allocator List In-Place](/images/memory-allocation-strategies/pool_allocator_list_inplace.svg)
 </center>
 
 ## Allocate and Free
