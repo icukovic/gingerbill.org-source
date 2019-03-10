@@ -20,6 +20,6 @@ popd
 goto end
 
 :error
-echo Commit message is missing for deployment
+echo Commit message is missing for deployment, remember to put "" around it
 
 :end
