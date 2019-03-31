@@ -1,10 +1,7 @@
 ---
 title: The Odin Programming Language Specification
+warning: true
 ---
-
-**Warning:** This is a work in progress and is subject to change.
-
-------
 
 ## Introduction
 
@@ -479,6 +476,8 @@ Procedures:
 
 ```
 
+## Attributes
+
 ## Expressions
 
 ### Operators
@@ -505,7 +504,7 @@ Binary operators of the same precedence associate from left to right. For instan
 ### Arithmetic operators
 
 ```
-+    sum                    integers, floats, complex values, strings
++    sum                    integers, floats, complex values, constant strings values
 -    difference             integers, floats, complex values
 *    product                integers, floats, complex values
 /    quotient               integers, floats, complex values
@@ -521,6 +520,8 @@ Binary operators of the same precedence associate from left to right. For instan
 >>   right shift            integer >> unsigned integer
 ```
 
+Arithmetic operators also work on fixed-length arrays of numeric types.
+
 
 #### Integer operators:
 For two integer values `x` and `y`, the integer quotient `q = x / y` and remainder `r = x % y` satisfy the following relationships:
@@ -532,10 +533,31 @@ x = q*y + r    and    |r| < |y|
 with `x / y` truncated towards zero ("[truncated division](https://wikipedia.org/wiki/Modulo_operation)").
 
 ## Statements
+### Labelled statements
+### Expression statements
+### Assignments
+### If statements
+### Switch statements
+### For statements
+### Return statements
+### Break statements
+### Continue statements
+### Fallthrough statements
+### Defer statements
 
 ## Built-in procedures
+### Length and capacity
+### Manipulating complex numbers
+### Numeric bounds
+### Directive based
+### Other
 
 ## Packages
+### Source file organization
+### Package clause
+### Import declaration
+
+## Foreign system
 
 ## Implicit context system
 
