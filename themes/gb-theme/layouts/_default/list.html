@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 {{if not .IsHome }}
-<h1>{{ .Title | markdownify }}</h1>
+{{ with .Params.hide_title }}{{ else }}<h1>{{ .Title | markdownify }}</h1>{{ end }}
 {{ end }}
 {{ .Content }}
 <ul class="articles">

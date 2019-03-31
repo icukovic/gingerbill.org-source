@@ -2,7 +2,7 @@
 <main>
 <article class="article-meta">
 <header>
-	<h1>{{ .Title | markdownify }}</h1>
+	{{ with .Params.hide_title }}{{ else }}<h1>{{ .Title | markdownify }}</h1>{{ end }}
 	{{ with .Description }} <h2>{{ . | markdownify }}</h2>{{ end }}
 	<div class="info">
 		{{ with .Params.series }}<p><span class="series">Series:</span>

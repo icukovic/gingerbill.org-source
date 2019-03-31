@@ -14,7 +14,7 @@ pushd public
 call git add .
 
 git commit -m %1
-git push GitHub master
+git push GitHub gh-pages
 popd
 
 goto end
