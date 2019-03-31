@@ -14,7 +14,7 @@ pushd public
 call git add .
 
 git commit -m %1
-git push GitHub gh-pages
+git push --progress "origin" gh-pages:gh-pages
 popd
 
 goto end

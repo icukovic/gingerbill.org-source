@@ -38,8 +38,8 @@ Source code is Unicode text encoded in UTF-8. The text is not canonicalized, so 
 
 Each code point is distinct; there is case sensitivity.
 
-Implementation restriction: A compile must disallow the NUL character (U+0000) in the source text.
-Implementation restriction: A compile may ignore a UTF-8-encoded byte order mark (U+FEFF) if it is the first Unicode code point in the source text. A byte order mark must be disallowed anywhere else in the source text.
+Implementation restriction: A compile _must_ disallow the NUL character (U+0000) in the source text.
+Implementation restriction: A compile _may_ ignore a UTF-8-encoded byte order mark (U+FEFF) if it is the first Unicode code point in the source text. A byte order mark _must_ be disallowed anywhere else in the source text.
 
 
 ### Characters
@@ -480,6 +480,19 @@ Procedures:
 
 ## Expressions
 
+### Operands
+### Qualified identifiers
+### Composite literals
+### Procedure literals
+### Selectors
+#### Implicit selector
+### Index expressions
+### Slice expressions
+### Type assertions
+### Calls
+### Passing argument to variadic parameters
+### Operators
+
 ### Operators
 #### Operator precedence
 
@@ -531,6 +544,23 @@ x = q*y + r    and    |r| < |y|
 ```
 
 with `x / y` truncated towards zero ("[truncated division](https://wikipedia.org/wiki/Modulo_operation)").
+
+### Logical operators
+### Address operators
+### Conversion
+A conversion changes the type of an expression to the type specified by the conversion. A conversion may appear literally in the source, or it may be implied by the context in which an expression appears.
+
+An _explicit_ conversion is an expression of the form `T(x)` or `cast(T)x` where `T` is a type and `x` is an expression that can be converted to type `T`.
+```
+Conversion = CallConversion | CastConversion .
+CallConversion = Type "(" Expression [ ", "] ")" .
+CastConversion = "cast" "(" Type ")" Expression .
+```
+
+#### Transmute
+
+### Constant expressions
+### Order of evaluation
 
 ## Statements
 ### Labelled statements
