@@ -3,7 +3,7 @@ title: Odin Programming Language
 hide_title: true
 ---
 <center>
-<a href="//http://odin-lang.org">
+<a href="//odin-lang.org">
 <div style="width: 20em"><img alt="Odin Programming Language" src="/images/odin/logo-slim.png"></div>
 </a>
 </center>
