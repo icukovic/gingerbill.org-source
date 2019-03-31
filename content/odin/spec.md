@@ -7,7 +7,7 @@ warning: true
 
 This is a reference manual for the Odin programming language.
 
-Odin is a general-purpose language designed for systems programming. It is a strongly typed language with manual memory managment. Programs are constructed from _packages_.
+Odin is a general-purpose language designed for systems programming. It is a strongly typed language with manual memory management. Programs are constructed from _packages_.
 
 
 ## Notation
