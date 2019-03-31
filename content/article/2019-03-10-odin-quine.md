@@ -9,7 +9,7 @@ tags:
   - odin quine
 ---
 
-A [Quine](https://wikipedia.org/wiki/Quine_(computing)) in Odin:
+A [Quine](https://wikipedia.org/wiki/Quine_(computing)) in [Odin](/odin):
 
 ```odin
 package quine
