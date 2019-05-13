@@ -2,7 +2,7 @@
 title: A Reply to _The Road to Zig 1.0_
 slug: a-reply-to-the-road-to-zig
 author: Ginger Bill
-date: '2019-05-14'
+date: '2019-05-13'
 categories:
   - programming language theory
   - programming languages
