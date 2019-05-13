@@ -242,13 +242,13 @@ TODO:
 ```
 \a   U+0007 alert or bell
 \b   U+0008 backspace
-\e   U+001b escape
+\e   U+001B escape
 \f   U+000C form feed
 \n   U+000A newline or line feed
 \r   U+000D carriage return
 \t   U+0009 horizontal tab
-\v   U+000b vertical tab
-\\   U+005c backslash
+\v   U+000B vertical tab
+\\   U+005C backslash
 \'   U+0027 single quote  (valid escape only within rune literals)
 \"   U+0022 double quote  (valid escape only within string literals)
 ```
@@ -355,7 +355,7 @@ i64be       big endian representation of the set of all signed 64-bit integers (
 There is also a set of predeclared numeric types with implementation-specific sizes:
 ```
 uintptr     an unsigned integer large enough to store the uninterpreted bits of a pointer value
-uint        same size as uintptr
+uint        same size as uint
 int         same size as uint
 ```
 
@@ -388,15 +388,74 @@ The length is part of the array's type; it must evaluate to a non-negative const
 
 ```
 [32]byte
-[2*N]union{int, string}
+[2*N + 1]union{int, string}
 [42]^f32
 [2][3]int
 [3][3][3]f64 // same as [3]([3]([3]f64))
 ```
 
 ### Slice types
+
+A slice is a descriptor for a contiguous segment of _underlying array/memory_ and provides access to an indexed sequence of elements from that array/memory. A slice type denotes the set of all slices of arrays of its element type. The number of elements is called the length of the slice and is never negative. The value of an uninitialized slice is `nil`.
+
+```
+SliceType = "[" "]" ElementType .
+```
+
+The length of a slice `s` can be determined by the built-in procedure `len`. Unlike with regular arrays, this length is not a compile-time constant and must be determined during execution. The elements can be addressed by integer indicies `0` through `len(s)-1`.
+
 ### Dynamic array types
+
+```
+DynamicArrayType = "[" "dynamic" "]" ElementType .
+```
+
 ### Struct types
+
+A struct is a sequence of named elements, called fields, each of which has a name and a type. Within a struct, non-blank field names must be unique.
+
+```
+StructType            = "struct" StructTypeTags "{" FieldList "}" .
+FieldList             = FieldDecl { "," FieldDecl } .
+FieldDecl             = [ [using] IdentifierList ":" ] Type .
+StructTypeTags        = { (StructTypeTagPacked | StructTypeTagRawUnion | StructTypeTagAlign) } .
+StructTypeTagPacked   = "#" "packed" .
+StructTypeTagRawUnion = "#" "raw_union" .
+StructTypeTagAlign    = "#" "align" Expression .
+```
+
+```
+// An empty struct
+struct {}
+
+// A struct with 5 fields
+struct {
+	x, y: int,
+	f: f32,
+	_: f32, // padding
+	a: ^[]int,
+	p: proc() -> int,
+}
+
+// A struct with no padding between its fields
+struct #packed {
+	a: u8,
+	b: u16,
+	c: u32,
+	d: u8,
+}
+```
+
+The `#packed` tag states the memory representation of the struct type to have no padding between its fields.
+
+The `#raw_union` tag states the memory representation of the struct type to have the size of its largest in size field and alignment of its largest in alignment member, and have all fields be accessed by the same memory offset of zero.
+
+The `#raw_union` tag and `#packed` tag cannot be combined together.
+
+The `#align` tag explicitly states the alignment required for the struct type.
+
+
+
 ### Union types
 ### Pointer types
 TODO: `rawptr`
@@ -415,8 +474,48 @@ TODO: `rawptr`
 ## Properties of types and values
 
 ### Type identity
+
+Two types are either _identical_ or _different_.
+
+A distinct type is always different from any other type. Otherwise, type types are identical if their underlying type literals are structurally equivalent; that is, they have the same literal structure and corresponding components have identical types. In detail:
+
+* Two array types are identical if they have identical element types and the same array length
+* Two slice types are identical if they have identical element types
+* Two dynamic array types are identical if they have identical element types
+* Two struct types are identical if they have the same sequence of fields, and if corresponding fields have the same same names and identical types, and have identical memory layout specifications
+* Two union types are identical if they have the same sequence of variant types
+* Two pointer types are identical if they have identical base types
+* Two procedure types are identical if they have the same number of parameters and return values, corresponding parameter and result types are identical, and either both procedures are variadic or neither is. Parameter and return names are not required to match.
+* Two map types are identical if they have identical key and element types
+* Two enum types are identical if and only if they are the same enum
+* Two opaque types are identical if they have the same underlying base type
+* Two bit field types are identical if they have the same number of fields, and if corresponding sizes and offsets are identical, and alignment is identical
+* Two bit set types are identical if they have identical element types, underlying types, and have an identical value range
+
 ### Assignability
+
+A value `x` is assignment to a variable of type `T` ("`x` is assignable to `T`") if one of the following conditions applies:
+
+* `x`'s type is identical to `T`
+* `x`'s type `v` and `T` have identical underlying types and at least one of `v` or `T` is not a distinct type
+* `x` is the predeclared identifier `nil` and `T` is a pointer, procedure, slice, dynamic array, map, enum, union, bit set, bit field, opaque type, `any`, `cstring` or `typeid`.
+* `x` is the _uninitialized value_ `---` and `T` is a variable
+* `x` is an untyped constant representable by a value of type `T`
+* `x` is a procedure group and one of its procedures can be assigned to `T`
+* `x`'s type is a pointer and `T` is `rawptr`
+* `T` is a union and `x`'s type is a variant of the union `T`
+* `T` is an `any` type and `x` is not `nil` nor `---`
+* `x`'s type is an integer and `T` is a bit field type
+* `x` is a subtype of `T` from the use of `using` in `T`
+* `T` is an array and `x`'s type `v` is assignable to element type of `T`
+
 ### Representability
+
+A constant `x` is representable by a value of type `T` if one of the following conditions applies:
+
+* `x` is in a set of the values determined by `T`
+* `T` is a floating-point type and `x` can be rounded to `T`'s precision without overflow. Rounding uses IEEE 754 round-to-even rules but with an IEEE negative zero further simplified to an unsigned zero. Note that constant values never result in an IEEE negative zero, NaN, or infinity
+* `T` is a complex type, and `x`'s components `real(x)` and `imag(x)` are representable by the values of `T`'s component type (`f32` or `f64`)
 
 
 ## Blocks
@@ -444,6 +543,8 @@ Blocks nest and influence scoping.
 Labels are declared by labeled statements and used in the "break" and "continue" statements. In contrast to other identifiers, labels are not block scoped. The scope of the label is the body of the procedure in which it is declared and excludes the body of any nested procedure.
 
 ### Blank identifier
+
+The _blank identifier_ is represented by the underscore character `_`. It acts as an anonymous placeholder rather than a regular non-blank identifier. It has a special meaning in declarations and in assignments.
 
 ### Predeclared identifiers
 
@@ -574,6 +675,7 @@ CastConversion = "cast" "(" Type ")" Expression .
 ### Continue statements
 ### Fallthrough statements
 ### Defer statements
+### Using statements
 
 ## Built-in procedures
 ### Length and capacity
@@ -595,4 +697,39 @@ CastConversion = "cast" "(" Type ")" Expression .
 
 ## Initialization and execution
 
+### The zero value
+
+When storage is allocated for a variable, through a declaration, or when a new value is created through a composite literal, and no explicit initialization is provided, the variable or value is given a default value. Each element of such a variable or value is set to the _zero value_ for its type.
+
+These two simple declarations are equivalent:
+```
+i: int;
+i: int = 0;
+```
+
+
 ## System considerations
+
+### Size and alignment guarantees
+
+```
+type                                           size in bytes
+
+byte, u8, i8, b8                               1
+u16, i16, u16le, i16le, b16                    2
+u32, i32, u32le, i32le, b32, f32, rune         4
+u64, i64, u64le, i64le, b64, f64, complex64    8
+complex128                                     16
+```
+
+
+Minimal alignment properties:
+
+1. For a variable `x` of any type, `align_of(x)` is at least 1
+2. For a variable `x` of array type, `align_of(x)` is the same as the alignment of a variable of the array's element type
+3. For a variable `x` of enum type, `align_of(x)` is the same as the alignment of a variable of the enum's base type (default of `int` if not specified)
+4. For a variable `x` of struct type, `align_of(x)` is the largest of all the values `align_of(x.f)` for each field `f` of `x`, but at least 1, unless the alignment has been explicitly stated by the struct tag `#align`, or the alignment is 1 if the struct is declared to be `#packed`.
+
+A struct, bit set, bit field, array, has size zero if it contains not field (or elements) that have a size greater than zero.
+
+A union has size zero if it contains zero variant types.

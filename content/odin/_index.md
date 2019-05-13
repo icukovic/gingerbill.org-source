@@ -27,6 +27,7 @@ GitHub:  <https://github.com/odin-lang/Odin>
 
 * [Tutorial](https://odin.handmade.network/wiki/3329-odin_tutorial)
 * [Frequently Asked Questions](https://github.com/odin-lang/Odin/wiki/Frequently-Asked-Questions-(FAQ))
+* [Work-in-Progress Language Specification](/odin/spec/)
 
 ## User Libraries
 

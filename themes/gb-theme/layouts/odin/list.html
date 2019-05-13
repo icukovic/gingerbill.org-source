@@ -1,0 +1,6 @@
+{{ partial "header.html" . }}
+{{if not .IsHome }}
+{{ with .Params.hide_title }}{{ else }}<h1>{{ .Title | markdownify }}</h1>{{ end }}
+{{ end }}
+{{ .Content }}
+{{ partial "footer.html" . }}
