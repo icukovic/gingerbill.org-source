@@ -125,38 +125,9 @@ Errors sets are an interesting concept that extend the error system in Zig. I wo
 
 The Zig build system is the language itself. ~~It extends the compile-time execution system to call a "build" function to set up the build requirements. Having the same language be the build-language is very useful and a natural extension of the compile-time execution system. The compile-time execution system itself is already a huge requirement for the language which does complicate things but if that is accepted and desired, this feature is less of an issue.~~
 
-Update: It appears that the build system is not part of the compile-time system whatsoever. It appears to be apart of the core library than a feature of the language itself. This could be easily replicate this in any language however it having it part of the core library itself, this means that there is a _standard_ approach to use which nudges it towards being the _default_ approach.
+Update: It appears that the build system is not part of the compile-time system whatsoever. It appears to be apart of the core library rather than a feature of the language itself. This could be easily replicate this in any language however having it part of the core library itself, this means that there is a _standard_ approach to use which nudges it towards being the _default_ approach.
 
-In Odin, "foreign" code is handled by the `foreign` system. Foreign code that is imported is associated with its dependencies, this means that only the dependencies that are used are built against. Coupled with Odin's package system, it helps encapsulate the foreign code along with the Odin code. Odin does not directly import C header file, like Zig, but I found that in practice, you rarely want to use the raw bindings to the C code.
-
-```odin
-// This is a code snippet of Odin code which binds to the GLFW 3 library which was originally in C
-package glfw
-
-// These dependences only get built against if they are used
-when ODIN_OS == "linux"   do foreign import glfw "system:glfw";
-when ODIN_OS == "windows" do foreign import glfw "glfw3dll.lib";
-
-...
-
-@(default_calling_convention="c")
-foreign glfw {
-    @(link_name="glfwInit") Init :: proc() -> b32 ---
-    @(link_name="glfwTerminate") Terminate :: proc() ---
-	glfwGetVersion :: proc(major, minor, rev: ^i32) ---
-
-    ...
-}
-
-
-// A wrapper to better reflect Odin's semantics
-GetVersion :: proc() -> (major, minor, rev: i32) {
-    glfwGetVersion(&major, &minor, &rev);
-    return major, minor, rev;
-}
-```
-
-From what I know of, how Zig is currently designed, its build system does not allow for this minimal dependency tracking that Odin offers.
+In Odin, "foreign" code is handled by the `foreign` system. Foreign code that is imported is associated with its dependencies, this means that only the dependencies that are used are built against. Coupled with Odin's package system, it helps encapsulate the foreign code along with the Odin code. Odin does not directly import C header file, like Zig, but I found that in practice, you rarely want to use the raw bindings to the C code. From what I know of, how Zig is currently designed, its build system does not allow for this minimal dependency tracking that Odin offers.
 
 ## Designed Around LLVM
 
@@ -184,9 +155,9 @@ Odin is not trying to solve the problem of _quality software_ as that is fundame
 
 I wanted a language that solved many of the issues I had with programming. I wanted the specification of the language to be 100% knowable by a mere mortal. There are probably less than a dozen people in the world that know all of the C++ specification _and_ understand it. Rust is starting to approach that complexity even though it is a new language. Swift already has a lot of baggage as its evolved past from Objective-C and the NeXTstep ecosystem.
 
-At the turn of 2016, I gave myself a New Year's Resolution to start any new personal programming project in pure C to see what I really needed from a language. It turned out that I needed very little to be very productive. The friction from having to remember many of the features in C++ and other languages reduced my productivity a lot more than I realised. From using pure C for a few months, I noticed that there were features that I wanted to add to C to increase my productivity and reducing errors. These features included `defer` and tagged-unions. I started creating a metaprogramming tool to augment my C code so I could add these new features. I quickly began to realise that what I wanted was a new language as this this endeavour was a dead-end.
+At the turn of 2016, I gave myself a New Year's Resolution to start any new personal programming project in pure C to see what I really needed from a language. It turned out that I needed very little to be very productive. The friction from having to remember many of the features in C++ and other languages reduced my productivity a lot more than I realised. From using pure C for a few months, I noticed that there were features that I wanted to add to C to increase my productivity and reducing errors. These features included `defer` and tagged-unions. I started creating a metaprogramming tool to augment my C code so I could add these new features. I quickly began to realise that what I wanted was a new language as this endeavour was a dead-end.
 
-The project started one evening in late July 2016 when I was annoyed with programming in C++ (not a new project). During this annoyance, I was also a little drunk. The language began as a Pascal clone (with begin and end and more) but changed quite quickly to become something else.
+The project started one evening in late July 2016 when I was annoyed with programming in C++ (not a new project). The language began as a Pascal clone (with begin and end and more) but changed quite quickly to become something else.
 
 Odin borrows heavily from (in order of philosophy and impact): Pascal, C, Go, Oberon. [Niklaus Wirth](https://en.wikipedia.org/wiki/Niklaus_Wirth) and [Rob Pike](https://en.wikipedia.org/wiki/Rob_Pike) have been the programming language design idols throughout this project. Simplicity was always a deriving force in the design, but as I found very early on, simplicity is complex.
 
