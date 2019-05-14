@@ -22,7 +22,7 @@ They are all very good languages but with entirely different philosophies behind
 [^odin-lang-creator]: For those who do not know, I am the creator of the [Odin programming language](https://www.gingerbill.org/odin/).
 
 
-Which brings to me to the latest talk by [Andrew Kelly](https://twitter.com/andy_kelley) about his programming language, [Zig](https://ziglang.org/), titled _[The Road to Zig 1.0](https://chariotsolutions.com/screencast/philly-ete-2019-andrew-kelley-the-road-to-zig-1-0/)_. In this talk, Andrew presents the Zig programming language as a programming language for maintaining robust reusable software with a tour of the unique features of that Zig has. I recommend watching the talk before reading this article to make your own decision about it.
+Which brings to me to the latest talk by [Andrew Kelley](https://twitter.com/andy_kelley) about his programming language, [Zig](https://ziglang.org/), titled _[The Road to Zig 1.0](https://chariotsolutions.com/screencast/philly-ete-2019-andrew-kelley-the-road-to-zig-1-0/)_. In this talk, Andrew presents the Zig programming language as a programming language for maintaining robust reusable software with a tour of the unique features of that Zig has. I recommend watching the talk before reading this article to make your own decision about it.
 
 
 <div class="youtube">
@@ -42,7 +42,7 @@ From experience of programming and the current programming culture, the second s
 [^left-pad]: See the Left-Pad Package causing severe issues across many other piece of code, <https://en.wikipedia.org/wiki/Npm_(software)#Notable_breakages>.
 
 
-However, my biggest gripe is the first point: write quality software. I wholeheartedly believe that writing quality software is not due to the issues of the programming language but the lack of incentives to make quality software and general culture around programming[^handmade-manifesto]. Humans are flawed beings and are incentive focused. Unless we have an incentive to do something, we are very unlikely to do it.
+However, my biggest gripe is the first point: write quality software. I wholeheartedly believe that writing quality software is not due to the issues of the programming language but the lack of incentives to make quality software and general culture around programming[^handmade-manifesto]. Humans are flawed beings and are incentive focused. Unless we have an incentive to do something, we are very unlikely to do it. There are many languages that are striving for robustness in the code, such as Rust and Ada, but the ensure robustness and quality, a robust and quality culture will be required to enforce it.
 
 [^handmade-manifesto]: For a possible way to improve the culture, please see the [Handmade.Network](https://handmade.network/manifesto)
 
@@ -73,11 +73,11 @@ After this, Andrew talks about a lot of the issues in C which can cause friction
 
 
 ```zig
-if builtin.os == .windows {
+if (builtin.os == .windows) {
 	var FT: FILETIME = undefined;
 	GetSystemTimeAsFileTime(&ft);
 	// ...
-} else if builtin.os == .linux {
+} else if (builtin.os == .linux) {
 	var tms: timespec = undefined;
 	clock_gettime(CLOCK_REALTIME, &tms);
 } else {
@@ -123,7 +123,9 @@ Errors sets are an interesting concept that extend the error system in Zig. I wo
 
 ## Build System
 
-The Zig build system is the language itself. It extends the compile-time execution system to call a "build" function to set up the build requirements. Having the same language be the build-language is very useful and a natural extension of the compile-time execution system. The compile-time execution system itself is already a huge requirement for the language which does complicate things but if that is accepted and desired, this feature is less of an issue.
+The Zig build system is the language itself. ~~It extends the compile-time execution system to call a "build" function to set up the build requirements. Having the same language be the build-language is very useful and a natural extension of the compile-time execution system. The compile-time execution system itself is already a huge requirement for the language which does complicate things but if that is accepted and desired, this feature is less of an issue.~~
+
+Update: It appears that the build system is not part of the compile-time system whatsoever. It appears to be apart of the core library than a feature of the language itself. This could be easily replicate this in any language however it having it part of the core library itself, this means that there is a _standard_ approach to use which nudges it towards being the _default_ approach.
 
 In Odin, "foreign" code is handled by the `foreign` system. Foreign code that is imported is associated with its dependencies, this means that only the dependencies that are used are built against. Coupled with Odin's package system, it helps encapsulate the foreign code along with the Odin code. Odin does not directly import C header file, like Zig, but I found that in practice, you rarely want to use the raw bindings to the C code.
 
