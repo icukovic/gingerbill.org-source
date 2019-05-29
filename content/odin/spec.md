@@ -310,15 +310,17 @@ b64     64-bit boolean type
 A numeric type represents sets of integer, floating-point, or rune values. The predeclared architecture-independent numeric types are:
 
 ```
-u8          the set of all unsigned  8-bit integers (0 to 255)
-u16         the set of all unsigned 16-bit integers (0 to 65535)
-u32         the set of all unsigned 32-bit integers (0 to 4294967295)
-u64         the set of all unsigned 64-bit integers (0 to 18446744073709551615)
+u8          the set of all unsigned  8-bit integers  (0 to 255)
+u16         the set of all unsigned 16-bit integers  (0 to 65535)
+u32         the set of all unsigned 32-bit integers  (0 to 4294967295)
+u64         the set of all unsigned 64-bit integers  (0 to 18446744073709551615)
+u128        the set of all unsigned 128-bit integers (0 to 340282366920938463463374607431768211455)
 
-i8          the set of all signed  8-bit integers (-128 to 127)
-i16         the set of all signed 16-bit integers (-32768 to 32767)
-i32         the set of all signed 32-bit integers (-2147483648 to 2147483647)
-i64         the set of all signed 64-bit integers (-9223372036854775808 to 9223372036854775807)
+i8          the set of all signed  8-bit  integers (-128 to 127)
+i16         the set of all signed 16-bit  integers (-32768 to 32767)
+i32         the set of all signed 32-bit  integers (-2147483648 to 2147483647)
+i64         the set of all signed 64-bit  integers (-9223372036854775808 to 9223372036854775807)
+i128        the set of all signed 128-bit integers (-170141183460469231731687303715884105728 to 170141183460469231731687303715884105727)
 
 f32         the set of all IEEE-754 32-bit floating-point numbers
 f64         the set of all IEEE-754 64-bit floating-point numbers
@@ -334,21 +336,25 @@ The value of an n-bit integer is n bits wide and represented using two's complem
 
 There is also a set of architecture-independent numeric types with a specified endianess:
 ```
-u16le       little endian representation of the set of all unsigned 16-bit integers (0 to 65535)
-u32le       little endian representation of the set of all unsigned 32-bit integers (0 to 4294967295)
-u64le       little endian representation of the set of all unsigned 64-bit integers (0 to 18446744073709551615)
+u16le       little endian representation of the set of all unsigned 16-bit integers  (0 to 65535)
+u32le       little endian representation of the set of all unsigned 32-bit integers  (0 to 4294967295)
+u64le       little endian representation of the set of all unsigned 64-bit integers  (0 to 18446744073709551615)
+u128le      little endian representation of the set of all unsigned 128-bit integers (0 to 340282366920938463463374607431768211455)
 
-i16le       little endian representation of the set of all signed 16-bit integers (-32768 to 32767)
-i32le       little endian representation of the set of all signed 32-bit integers (-2147483648 to 2147483647)
-i64le       little endian representation of the set of all signed 64-bit integers (-9223372036854775808 to 9223372036854775807)
+i16le       little endian representation of the set of all signed 16-bit integers  (-32768 to 32767)
+i32le       little endian representation of the set of all signed 32-bit integers  (-2147483648 to 2147483647)
+i64le       little endian representation of the set of all signed 64-bit integers  (-9223372036854775808 to 9223372036854775807)
+i128le      little endian representation of the set of all signed 128-bit integers  (-170141183460469231731687303715884105728 to 170141183460469231731687303715884105727)
 
-u16be       big endian representation of the set of all unsigned 16-bit integers (0 to 65535)
-u32be       big endian representation of the set of all unsigned 32-bit integers (0 to 4294967295)
-u64be       big endian representation of the set of all unsigned 64-bit integers (0 to 18446744073709551615)
+u16be       big endian representation of the set of all unsigned 16-bit integers  (0 to 65535)
+u32be       big endian representation of the set of all unsigned 32-bit integers  (0 to 4294967295)
+u64be       big endian representation of the set of all unsigned 64-bit integers  (0 to 18446744073709551615)
+u128be      big endian representation of the set of all unsigned 128-bit integers (0 to 340282366920938463463374607431768211455)
 
-i16be       big endian representation of the set of all signed 16-bit integers (-32768 to 32767)
-i32be       big endian representation of the set of all signed 32-bit integers (-2147483648 to 2147483647)
-i64be       big endian representation of the set of all signed 64-bit integers (-9223372036854775808 to 9223372036854775807)
+i16be       big endian representation of the set of all signed 16-bit integers  (-32768 to 32767)
+i32be       big endian representation of the set of all signed 32-bit integers  (-2147483648 to 2147483647)
+i64be       big endian representation of the set of all signed 64-bit integers  (-9223372036854775808 to 9223372036854775807)
+i128be      big endian representation of the set of all signed 128-bit integers (-170141183460469231731687303715884105728 to 170141183460469231731687303715884105727)
 ```
 
 

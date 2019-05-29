@@ -56,14 +56,14 @@ There are two reasons for this conflict that I have between qualifier-focused an
 
 Qualifier-focused looks "ugly" when it is combined with control statements:
 
-```
+```go
 for var x = 0; x < 10; x += 1 {
 }
 ```
 
 The two keywords together in the `for var` block looks "dense and wrong" to me and makes reading the construct much more difficult. However, placing an open parenthesis in between the keywords reduces some of this "density":
 
-```
+```go
 for (var x = 0; x < 10; x += 1) {
 }
 ```

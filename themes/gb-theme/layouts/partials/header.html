@@ -6,6 +6,9 @@
   <title>{{if not .IsHome }}{{ .Title }} - {{end}}{{ .Site.Title }}</title>
   <link rel="stylesheet" href="{{ "/css/normalize.css" | relURL }}" />
   <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
+  <link rel="stylesheet" href="{{ "/highlight/style.css" | relURL }}" />
+  <script src="{{ "/highlight/highlight.pack.js" | relURL }}"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140084303-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
