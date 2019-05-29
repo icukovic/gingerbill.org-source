@@ -4,7 +4,7 @@
 {{ end }}
 {{ .Content }}
 <ul class="articles">
-  {{ range (where .Data.Pages "Section" "!=" "") }}
+  {{ range (where .Data.Pages "Section" "==" "article") }}
   <li>
     <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
 	{{ with .Description }} <p class="description">{{ . | markdownify }}</p>{{ end }}

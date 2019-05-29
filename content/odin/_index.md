@@ -4,11 +4,31 @@ hide_title: true
 ---
 <center>
 <a href="//odin-lang.org">
-<div style="width: 20em"><img alt="Odin Programming Language" src="/images/odin/logo-slim.png"></div>
+	<div style="width: 20em"><img alt="Odin Programming Language" src="/images/odin/logo-slim.png"></div>
 </a>
+
+<p>A fast, concise, readable, pragmatic and open sourced programming language.</p>
+<br>
+<p>
+	<a class="github-button" href="https://github.com/odin-lang" aria-label="Follow @odin-lang on GitHub">Follow @odin-lang</a>
+	<a class="github-button" href="https://github.com/odin-lang/Odin" data-size="small" aria-label="Star odin-lang/Odin on GitHub">Star</a>
+	<a class="github-button" href="https://github.com/odin-lang/Odin/subscription" aria-label="Watch odin-lang/Odin on GitHub">Watch</a>
+</p>
+<p>
+	<a href="https://github.com/odin-lang/odin/releases/latest">
+		<img src="https://img.shields.io/github/release/odin-lang/odin.svg">
+	</a>
+	<a href="https://github.com/odin-lang/odin/releases/latest">
+		<img src="https://img.shields.io/badge/platforms-Windows%20|%20Linux%20|%20macOS-green.svg">
+	</a>
+	<a href="https://github.com/odin-lang/odin/blob/master/LICENSE">
+		<img src="https://img.shields.io/github/license/odin-lang/odin.svg">
+	</a>
+</p>
 </center>
 
 # The Odin Programming Language
+
 
 The Odin programming language is fast, concise, readable, pragmatic and open sourced. It is designed with the intent of replacing C with the following goals:
 
@@ -19,13 +39,19 @@ The Odin programming language is fast, concise, readable, pragmatic and open sou
 
 <br>
 
-Website: <https://odin.handmade.network/><br>
-GitHub:  <https://github.com/odin-lang/Odin>
+<table>
+<tbody>
+<tr><td>Website:</td><td><a href="https://odin-lang.org">https://odin-lang.org</a></td></tr>
+<tr><td>GitHub:</td> <td><a href="https://github.com/odin-lang/Odin">https://github.com/odin-lang/Odin</a></td></tr>
+<tr><td>Discord:</td><td><a href="https://discord.gg/nYRGAma>">Discord Server</a></td></tr>
+</tbody>
+</table>
 
+</table>
 
 ## Documentation
 
-* [Tutorial](https://odin.handmade.network/wiki/3329-odin_tutorial)
+* [Documentation](/odin/docs/)
 * [Frequently Asked Questions](https://github.com/odin-lang/Odin/wiki/Frequently-Asked-Questions-(FAQ))
 * [Work-in-Progress Language Specification](/odin/spec/)
 
@@ -75,3 +101,6 @@ main :: proc() {
 * [Loadsachanges](https://www.youtube.com/watch?v=ar0vFMoMtrI)
 * [Packages, Bit Sets, cstring](https://youtu.be/b8bJbjiXZrQ)
 	- [Q&A](https://youtu.be/5jmxyIfyyTk)
+
+
+<script async defer src="/js/github-buttons.js"></script>
