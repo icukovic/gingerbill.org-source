@@ -43,7 +43,7 @@ The Odin programming language is fast, concise, readable, pragmatic and open sou
 <tbody>
 <tr><td>Website:</td><td><a href="https://odin-lang.org">https://odin-lang.org</a></td></tr>
 <tr><td>GitHub:</td> <td><a href="https://github.com/odin-lang/Odin">https://github.com/odin-lang/Odin</a></td></tr>
-<tr><td>Discord:</td><td><a href="https://discord.gg/nYRGAma>">Discord Server</a></td></tr>
+<tr><td>Discord:</td><td><a href="https://discord.gg/sVBPHEv">Discord Server</a></td></tr>
 </tbody>
 </table>
 
