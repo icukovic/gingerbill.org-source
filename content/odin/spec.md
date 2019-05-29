@@ -1,6 +1,8 @@
 ---
 title: The Odin Programming Language Specification
 warning: true
+images:
+- /images/odin/logo-slim.png
 ---
 
 ## Introduction

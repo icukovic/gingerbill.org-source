@@ -1,6 +1,8 @@
 ---
 title: Odin Programming Language
 hide_title: true
+images:
+- /images/odin/logo-slim.png
 ---
 <center>
 <a href="//odin-lang.org">
