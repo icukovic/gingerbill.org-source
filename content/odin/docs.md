@@ -2,7 +2,7 @@
 title: Odin Documentation
 warning: true
 images:
-- /images/odin/logo-slim.png
+- https://www.gingerbill.org/images/odin/logo-slim.png
 ---
 
 ## Introduction
