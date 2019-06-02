@@ -115,7 +115,7 @@ There are numerous other implementations of this too and I have linked to these 
 
 ## Caveat
 
-Because the `defer` statement is called at the end of scope rather than function return, a Go programmer would example something like this:
+Because the `defer` statement is called at the end of scope rather than function return, a Go programmer for example would do something like this:
 
 ```c
 void another_func(void) {
