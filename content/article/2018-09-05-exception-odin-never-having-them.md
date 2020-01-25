@@ -65,7 +65,10 @@ case BazError, PlopError:
 
 
 The semantics are very similar in this case however the control flow is completely different. In the exceptions case (shown with Python), you enclose a block of code and catch any exceptions that have been raised. In the return value case (shown with Odin), you test the return value explicitly from the call.
-Exceptions require unwinding the stack; this is much slower when an exception happens compared to the fixed small cost of a return value.
+Exceptions require unwinding the stack; this can be slower[^slower] when an exception happens compared to the fixed small cost of a return value.
+
+[^slower] Theoretically exceptions can be just as fast a return statement because that's effectively what it is. However, most modern languages do a lot more than that to implement exceptions and they can be a lot slower in pratice.
+
 
 In both cases, a "catch all" is possible:
 
