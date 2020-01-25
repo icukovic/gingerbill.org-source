@@ -231,7 +231,9 @@ I think the notion that "null" is a billion dollar mistake is well overblown. `N
 
 In theory, `NULL` is still a perfectly valid memory address it is just that we have decided on the convention that `NULL` is useful for marking a pointer as unset.
 
-Many languages now have support for maybe/option types or nullable types (monads), however I am still not a huge fan of them in practice as I rarely require them in systems-level programming. I know very well this is a "controversial" opinion, but systems-level programming languages deal with memory all the time and can easily get into "unsafe" states __unpurpose__. Restricting this can actually make things like custom allocators very difficult to implement, along with other things[^null-pointer-topic].
+Many languages now have support for maybe/option types or nullable types (monads), however I am still not a huge fan of them in practice as I rarely require them in systems-level programming. I know very well this is a "controversial" opinion, but systems-level programming languages deal with memory all the time and can easily get into "unsafe" states __on purpose__. Restricting this can actually make things like custom allocators very difficult to implement, along with other things[^null-pointer-topic].
+
+Odin can technically implement a maybe type through `union` but not to the extend may people would like.
 
 [^null-pointer-topic]: This topic alone may require an article to itself.
 
@@ -258,7 +260,7 @@ A lot of the issues in C come from C's poor and lacking type system. I am not ag
 
 ## Conclusion
 
-A lot of C's mistakes are only mistakes in retrospective but C is still an extremely useful language to use, and I am still extremely productive in it.
+A lot of C's mistakes are only mistakes in retrospective, but C is still an extremely useful language to use, and I am still extremely productive in it.
 
 To quote Fred Brooks in his book _No Silver Bullet – Essence and Accident in Software Engineering_:
 
