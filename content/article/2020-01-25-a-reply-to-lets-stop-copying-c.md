@@ -244,7 +244,7 @@ Odin can technically implement a maybe type through `union` but not to the exten
 
 ## Assignment as expression
 
-I completely agree that assignment as an expression is a bad idea and causes more problems than utility.
+I completely agree that assignment as an expression is a bad idea and causes more problems than the utility it gives.
 
 ## No hyphens in identifiers
 
@@ -271,4 +271,4 @@ To quote Fred Brooks in his book _No Silver Bullet – Essence and Accident in S
 
 > There is no single development, in either technology or management technique, which by itself promises even one order of magnitude [tenfold] improvement within a decade in productivity, in reliability, in simplicity.
 
-And sadly, this is _still_ true with regards to comparing C to other higher level general purpose languages, as they do not offer an order of magnitude improvement in productive. C hit a local maximum of productive for which so many still have yet to understand why and learn from.
+And sadly, this is _still_ true with regards to comparing C to other higher level general purpose languages, as they do not offer an order of magnitude improvement in productivity. C hit a local maximum of productive for which so many still have yet to understand why and learn from.
