@@ -65,7 +65,12 @@ In different languages, the operator `%` is usually implemented as either divide
 `%%` is equivalent to the following using `%`:
 
 ```
-a %% b == ((a % b) + a) % b
+a %% b == ((a % b) + b) % b
+```
+
+```
+a %  b = a - trunc(a/b) * b
+a %% b = a - floor(a/b) * b
 ```
 
 See the following for more information: <https://wikipedia.org/wiki/Modulo_operation>
@@ -105,7 +110,7 @@ If you would like to see Odin's approach to switch statements, I recommend readi
 
 ## Type first
 
-C's "type first" was a weird design decision. It was meant to expression that the type declaration is the same as how it is used in an expression. For this reason, C has given use some of the most "wonderful" declarations:
+C's "type first" was a weird design decision. It was meant to expression that the type declaration is the same as how it is used in an expression. For this reason, C has given us some of the most "wonderful" declarations:
 
 ```c
 int *x[3];   // array 3 of pointer to int
@@ -231,9 +236,9 @@ I think the notion that "null" is a billion dollar mistake is well overblown. `N
 
 In theory, `NULL` is still a perfectly valid memory address it is just that we have decided on the convention that `NULL` is useful for marking a pointer as unset.
 
-Many languages now have support for maybe/option types or nullable types (monads), however I am still not a huge fan of them in practice as I rarely require them in systems-level programming. I know very well this is a "controversial" opinion, but systems-level programming languages deal with memory all the time and can easily get into "unsafe" states __on purpose__. Restricting this can actually make things like custom allocators very difficult to implement, along with other things[^null-pointer-topic].
+Many languages now have support for maybe/option types or nullable types (monads), however I am still not a huge fan of them in practice as I rarely require them in systems-level programming. I know very well this is a "controversial" opinion, but systems-level programming languages deal with memory all the time and can easily get into "unsafe" states on purpose. Restricting this can actually make things like custom allocators very difficult to implement, along with other things[^null-pointer-topic].
 
-Odin can technically implement a maybe type through `union` but not to the extend may people would like.
+Odin can technically implement a maybe type through `union` but not to the extent many people would like (especially with the syntactic sugar).
 
 [^null-pointer-topic]: This topic alone may require an article to itself.
 
@@ -247,7 +252,7 @@ I think using possible operators in identifiers is just waiting for trouble, eve
 
 ## Braces and semicolons
 
-This is mainly an aesthetic thing with huge consequences. Braces and semicolons serve purposes. Braces denote a new block and semicolons terminate a statement. If you want to remove semicolons from a language, you will either need to enforce a brace style (like Go) or have sensitive whitespace through something like Python's offside rule.
+This is mainly an aesthetic thing with huge consequences. Braces and semicolons serve purposes. Braces denote a new block and semicolons terminate a statement. If you want to remove semicolons from a language, you will either need to enforce a brace style (like Go) or have sensitive white-space through something like Python's offside rule.
 
 For Odin, I wanted braces but I did not want to enforce a code style on the use at the language level, which means that it requires semicolons.
 
