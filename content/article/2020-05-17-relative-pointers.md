@@ -138,7 +138,7 @@ This approach has been used at [Valve](https://www.youtube.com/watch?v=Nsf2_Au6K
 
 As with _offset pointer_, self-relative pointers have a similar main advantage: serializeability. This means that the data structure can be `memcpy`'d and still be (mostly) valid.
 
-One issue with self-relative pointers is that for the value itself to be valid, it must be in an addressable memory space (i.e. must be an l-value and not in a register). If a language containing such a concept wanted to ensure the validity of such a data type, any other data type that contains it would also have to be addressable to. This adds a form of virality to the type system, adding a new concept of addressability to the type system directly. However, even if this was enforced, there are cases when a self-relative pointer in non-addressable memory could be perfectly valid. For this reason.
+One issue with self-relative pointers is that for the value itself to be valid, it must be in an addressable memory space (i.e. must be an l-value and not in a register). If a language containing such a concept wanted to ensure the validity of such a data type, any other data type that contains it would also have to be addressable to. This adds a form of virality to the type system, adding a new concept of addressability to the type system directly. However, even if this was enforced, there are cases when a self-relative pointer in non-addressable memory could be perfectly valid.
 
 Another issue is that smaller base integer types for the internal offset value means that they can only be valid over a smaller range than regular pointers.
 
