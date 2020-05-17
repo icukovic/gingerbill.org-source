@@ -35,7 +35,7 @@ In general, there are four forms of relative pointers:
 
 ## Global-Based Pointers
 
-MSVC supports and non-official extension to C and C++, [_based pointers_](https://docs.microsoft.com/en-us/cpp/cpp/based-pointers-cpp), which allows the user to declare pointers based on pointers. They can be declared using the `__based` keyword.
+MSVC supports a non-official extension to C and C++, [_based pointers_](https://docs.microsoft.com/en-us/cpp/cpp/based-pointers-cpp), which allows the user to declare pointers based on pointers. They can be declared using the `__based` keyword.
 
 ```c
 void *global_buffer;
