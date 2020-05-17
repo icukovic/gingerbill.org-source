@@ -65,7 +65,7 @@ struct Based_Pointer {
 	}
 
 	void operator=(Elem *ptr) {
-		offset = ptr ? (Integer_Base)((char *)base - (char *)ptr) : 0;
+		offset = ptr ? (Integer_Base)((char *)ptr - (char *)base) : 0;
 	}
 };
 ```
