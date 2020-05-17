@@ -39,5 +39,9 @@ staticDir = ["static"]
 
 [params]
     description = ""
-    footer = "&copy; 2007&ndash;2019 Ginger Bill"
+    footer = "&copy; 2007&ndash;2020 Ginger Bill"
 
+
+
+[markup.goldmark.renderer]
+unsafe=true
