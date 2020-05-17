@@ -208,7 +208,7 @@ Node :: struct {
 
 ## Summary
 
-Relative pointers allow for a lot more flexibility compared to "traditional" pointers, and a godsend with regards to serialization. They do have many advantages and disadvantages of "traditional" pointers, and the programmer must be absolutely aware of them before using them. Relative pointers can be easily serialized making them ideal for file formats, and relative pointers can be as small as they need to be rather than taking up the same size of a regular pointer (e.g. on 64-bit platforms, a pointer is 64 bits which might be a lot more than the user requires for a specific problem).
+Relative pointers allow for a lot more flexibility compared to "traditional" pointers, and a godsend with regards to serialization. They do have many advantages and disadvantages compared to "traditional" pointers, and the programmer must be absolutely aware of them before using them. Relative pointers can be easily serialized making them ideal for file formats, and relative pointers can be as small as they need to be rather than taking up the same size of a regular pointer (e.g. on 64-bit platforms, a pointer is 64 bits which might be a lot more than the user requires for a specific problem).
 
 
 
