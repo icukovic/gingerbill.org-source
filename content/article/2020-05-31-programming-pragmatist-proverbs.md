@@ -19,22 +19,19 @@ The following concepts express the school of thought that I subscribe to which I
 ### The concept of programming
 
 * Programming is a tool to solve a problems that you have in the domain of computers
-* A program _is_ and _ought to be_ something that transforms data into other forms of data
+* The purpose of a program _is_, and _ought to be_, something that transforms data into other forms of data
 * Try to solve _the_ specific problem you have, not _a_ general problem you _might_ have
 
 * Programming languages, compilers, libraries, etc, are just tools
 
-* The purpose of a programs is to transform data into other forms of data.
-
-
 ### Problem solving
 
 * Understand the purpose of the problem that you are solving
-* To solve a problem there are four steps of thought must be taken sequentially and cannot be skipped:
-	* Purpose
-	* Function
-	* Usage
-	* Implementation/Form
+* To solve a problem there are four steps of thought that need taken sequentially and cannot be skipped:
+* Purpose
+* Function
+* Usage
+* Implementation/Form
 
 * Reality is part of your problem
 * The hardest thing about programming is understand the problem you are trying to solve
@@ -45,7 +42,7 @@ The following concepts express the school of thought that I subscribe to which I
 
 * Being generic is rarely what you want
 * If the data changes, so does the problem
-* When trying to solve a multifaceted problem, try to solve for the most common case first rather than the most generic
+* When trying to solve a multifaceted problem, try to solve for the most common case first and not the most generic
 
 ### Practice
 
@@ -56,14 +53,14 @@ The following concepts express the school of thought that I subscribe to which I
 
 ### Model building
 
-* In order to interpret anything, you require an model of interpretation
+* In order to interpret anything, you require a model of interpretation
 
 * It is a fallacy to try to model your problem around a model of world, as this is a category error
 
 * For any argument, proposal, or alternative algorithm, remember to ask yourself:
-	* compared to what? (what other ideas exist?)
-	* what hard evidence do you have? (empirical, experiential, quantitative, qualitative, etc)
-	* at what cost? (performance, speed, memory, energy, sanity, monetary, etc)
+* compared to what? (what other ideas exist?)
+* what hard evidence do you have? (empirical, experiential, quantitative, qualitative, etc)
+* at what cost? (performance, speed, memory, energy, sanity, monetary, etc)
 
 * Be sceptical of any new idea proclaiming to solve all your problems without any evidence nor counter-examples
 
@@ -71,7 +68,6 @@ The following concepts express the school of thought that I subscribe to which I
 * Hard problems are hard
 * The hardware is part of the domain that you are trying to solve
 * Similarities with code and the real world do not imply causal relationships
-* Data states the model of
 * A model is only as good as the predictions it makes
 
 * Most _"best practices"_ rarely have any evidence to back up their claims, especially about being the best
@@ -132,7 +128,6 @@ The following concepts express the school of thought that I subscribe to which I
 * Package managers are a trivial program if the concept of a package is well defined
 * Bike-shedding is common in trivial topics by people with trivial knowledge
 * Assembly is a direct representation of machine code; (naïve) C is one of the simplest type-theory based representations of Assembly languages.
-
 
 ## Quotes
 
