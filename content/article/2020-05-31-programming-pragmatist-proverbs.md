@@ -27,7 +27,7 @@ The following concepts express the school of thought that I subscribe to which I
 ### Problem solving
 
 * Understand the purpose of the program that you are writing
-* To solve a problem there are four steps of thought that need taken sequentially and cannot be skipped:
+* To solve a problem there are four steps of thought that need to be taken sequentially and cannot be skipped:
 	* Purpose
 	* Function
 	* Usage
