@@ -18,15 +18,15 @@ The following concepts express the school of thought that I subscribe to which I
 
 ### The concept of programming
 
-* Programming is a tool to solve a problems that you have in the domain of computers
+* Programming is a tool to solve problems that you have in the domain of computers
 * The purpose of a program _is_, and _ought to be_, something that transforms data into other forms of data
-* Try to solve _the_ specific problem you have, not _a_ general problem you _might_ have
+* Try to solve _the specific_ problem you have, not _a general_ problem you _might_ have
 
-* Programming languages, compilers, libraries, etc, are just tools
+* Programming languages, compilers, libraries, etc, are just tools, they are not worldviews nor signals of social status
 
 ### Problem solving
 
-* Understand the purpose of the problem that you are solving
+* Understand the purpose of the program that you are writing
 * To solve a problem there are four steps of thought that need taken sequentially and cannot be skipped:
 	* Purpose
 	* Function
@@ -34,11 +34,11 @@ The following concepts express the school of thought that I subscribe to which I
 	* Implementation/Form
 
 * Reality is part of your problem
-* The hardest thing about programming is understand the problem you are trying to solve
+* The hardest thing about programming is understanding the problem you are trying to solve
 
 * Try to think locally about your problem
 
-* Once you go generic, you lose information the specific
+* Once you go generic, you lose information about the specific
 
 * Being generic is rarely what you want
 * If the data changes, so does the problem
@@ -50,12 +50,13 @@ The following concepts express the school of thought that I subscribe to which I
 
 * You cannot become good at programming without practice, experimentation, and failure
 
+* Do not be afraid to try to new tools, but look for tools that have proven themselves to be useful
 
 ### Model building
 
 * In order to interpret anything, you require a model of interpretation
 
-* It is a fallacy to try to model your problem around a model of world, as this is a category error
+* It is a fallacy to try to model your problem around a model of world, as this is a category error. The reality of your problem is probably different to a reality of an analogous thing not on a computer.
 
 * For any argument, proposal, or alternative algorithm, remember to ask yourself:
 	* compared to what? (what other ideas exist?)
@@ -67,7 +68,7 @@ The following concepts express the school of thought that I subscribe to which I
 * The only thing you should orientate around is the problem you are trying to solve
 * Hard problems are hard
 * The hardware is part of the domain that you are trying to solve
-* Similarities with code and the real world do not imply causal relationships
+* Similarities between code and the real world do not imply causal relationships
 * A model is only as good as the predictions it makes and the explanatory power it has
 
 * Most _"best practices"_ rarely have any evidence to back up their claims, especially about being the best
@@ -80,7 +81,7 @@ The following concepts express the school of thought that I subscribe to which I
 
 * Clear is better than clever
 * Be kind to your future self
-* Strive to program around the principle of least surprise
+* Strive to program around the [principle of least surprise](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 * Make the zero value useful
 
 * Copying is usually better than dependency
@@ -97,7 +98,7 @@ The following concepts express the school of thought that I subscribe to which I
 
 * Don't be afraid to expand upon an idea, but remember to clean up the mess that you have made in the process
 * Objects are values with associated behaviour, which implies agency
-* Objects will naturally arise for certain problems, do not orientate around the concept of an object
+* Objects will naturally arise for certain problems; do not orientate around the concept of an object
 * Object orientation is not a silver bullet
 * Functional programming is not a silver bullet
 
@@ -107,21 +108,21 @@ The following concepts express the school of thought that I subscribe to which I
 
 * Holistic models rarely exist; reality is more complicated than we expect, do not worry about having specialized models for specific things
 
-* Knowing whether or not something is useful requires _skin in the game_ in order to get feedback
+* Knowing whether or not something is useful requires [_skin in the game_](https://en.wikipedia.org/wiki/Skin_in_the_game_(phrase)) in order to get feedback
 
 * Object orientated programming is a form of misinterpreted and misapplied Aristotelian Metaphysics applied to a domain it was never meant to model
 
 * Academic computer science is not an empirical science but a formal science like mathematics
 
-* Academic computer science rarely has any skin in the game with regarding the concepts it espouses
+* Academic computer science rarely has any skin in the game regarding the concepts it espouses
 
 * Programming is a relatively new craft with very little wisdom
 
-* People will naturally gravitate towards _flash fads_ looking for wisdom in them; there is no proven cultural practices that contain wisdom
+* People will naturally gravitate towards _flash fads_ looking for wisdom in them; there are proven cultural practices that contain wisdom
 
 * Associating behaviour with data implies agency, however this agency is not real and only the cause of an interpretive model of the data
 
-* Many people don't think beyond than the paradigm they embody. They can rarely think beyond the concepts since they do not know realise they think in a (flawed and incomplete) model, and that there are different models of interpreting the world.
+* Many people do not think beyond the paradigm they embody. They can rarely think beyond the concepts since they do not know realize they think in a (flawed and incomplete) model, and that there are different models of interpreting the world.
 
 * You cannot teach virtue, you can only learn it. Look towards virtuous programmers for wisdom, and ask about their ideas on virtue.
 
@@ -135,7 +136,7 @@ The following concepts express the school of thought that I subscribe to which I
 ### Other topics
 
 * Package managers are a trivial program if the concept of a package is well defined
-* Bike-shedding is common in trivial topics by people with trivial knowledge
+* [Bikeshedding](https://en.wiktionary.org/wiki/bikeshedding) is common in trivial topics by people with trivial knowledge
 * Assembly is a direct representation of machine code; (naïve) C is one of the simplest type-theory based representations of Assembly languages.
 
 
