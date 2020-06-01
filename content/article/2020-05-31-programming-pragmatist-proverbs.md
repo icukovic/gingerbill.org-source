@@ -68,7 +68,7 @@ The following concepts express the school of thought that I subscribe to which I
 * Hard problems are hard
 * The hardware is part of the domain that you are trying to solve
 * Similarities with code and the real world do not imply causal relationships
-* A model is only as good as the predictions it makes
+* A model is only as good as the predictions it makes and the explanatory power it has
 
 * Most _"best practices"_ rarely have any evidence to back up their claims, especially about being the best
 
@@ -123,11 +123,21 @@ The following concepts express the school of thought that I subscribe to which I
 
 * Many people don't think beyond than the paradigm they embody. They can rarely think beyond the concepts since they do not know realise they think in a (flawed and incomplete) model, and that there are different models of interpreting the world.
 
-### Random topics
+* You cannot teach virtue, you can only learn it. Look towards virtuous programmers for wisdom, and ask about their ideas on virtue.
+
+* _Bodging_ is doing a job out of necessity using whatever tools and materials come to hand and which, whilst not necessarily elegant, is nevertheless serviceable.
+
+* Most people think they are being pragmatic when programming, however they are usually _bodging_ it.
+
+* Bodging has a huge cost to it and should be not be relied upon.
+
+
+### Other topics
 
 * Package managers are a trivial program if the concept of a package is well defined
 * Bike-shedding is common in trivial topics by people with trivial knowledge
 * Assembly is a direct representation of machine code; (naïve) C is one of the simplest type-theory based representations of Assembly languages.
+
 
 ## Quotes
 
@@ -135,6 +145,18 @@ The following concepts express the school of thought that I subscribe to which I
 
 > In every systematic inquiry (methodos) where there are first principles, or causes, or elements, knowledge and science result from acquiring knowledge of these; for we think we know something just in case we acquire knowledge of the primary causes, the primary first principles, all the way to the elements. It is clear, then, that in the science of nature as elsewhere, we should try first to determine questions about the first principles. The naturally proper direction of our road is from things better known and clearer to us, to things that are clearer and better known by nature; for the things known to us are not the same as the things known unconditionally (haplôs). Hence it is necessary for us to progress, following this procedure, from the things that are less clear by nature, but clearer to us, towards things that are clearer and better known by nature.
 * Phys. 184a10–21
+
+> Our proper course with this subject as with others will be to present the various views about it, and then, after first reviewing the difficulties they involve, finally to establish if possible all or, if not all, the greater part and the most important of the opinions generally held with respect to these states of mind; since if the discrepancies can be solved, and a residuum of current opinion left standing, the true view will have been sufficiently established.
+* The Nicomachean Ethics
+
+> We must consider it, however, in the light not only of our conclusion and our premisses, but also of what is commonly said about it; for with a true view all the facts harmonize, but with a false one they soon clash.
+* The Nicomachean Ethics
+
+> Excellence is never an accident. It is always the result of high intention, sincere effort, and intelligent execution; it represents the wise choice of many alternatives – choice, not chance, determines your destiny.
+* The Nicomachean Ethics
+
+> The pleasures arising from thinking and learning will make us think and learn all the more.
+* The Nicomachean Ethics 1153a23
 
 ### William James
 
