@@ -28,10 +28,10 @@ The following concepts express the school of thought that I subscribe to which I
 
 * Understand the purpose of the problem that you are solving
 * To solve a problem there are four steps of thought that need taken sequentially and cannot be skipped:
-* Purpose
-* Function
-* Usage
-* Implementation/Form
+	* Purpose
+	* Function
+	* Usage
+	* Implementation/Form
 
 * Reality is part of your problem
 * The hardest thing about programming is understand the problem you are trying to solve
@@ -58,9 +58,9 @@ The following concepts express the school of thought that I subscribe to which I
 * It is a fallacy to try to model your problem around a model of world, as this is a category error
 
 * For any argument, proposal, or alternative algorithm, remember to ask yourself:
-* compared to what? (what other ideas exist?)
-* what hard evidence do you have? (empirical, experiential, quantitative, qualitative, etc)
-* at what cost? (performance, speed, memory, energy, sanity, monetary, etc)
+	* compared to what? (what other ideas exist?)
+	* what hard evidence do you have? (empirical, experiential, quantitative, qualitative, etc)
+	* at what cost? (performance, speed, memory, energy, sanity, monetary, etc)
 
 * Be sceptical of any new idea proclaiming to solve all your problems without any evidence nor counter-examples
 
