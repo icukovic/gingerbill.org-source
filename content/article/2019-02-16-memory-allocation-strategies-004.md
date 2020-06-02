@@ -28,9 +28,7 @@ A pool allocator takes a backing buffer and divides that buffer into pools/slots
 
 [^terms]: What's in a name? That which we call a rose. By any other name would smell as sweet. [Romeo and Juliet (II, ii, 1-2)](https://www.owleyes.org/text/romeo-and-juliet/read/act-ii-scene-ii)
 
-<center>
-![Pool Allocator Layout](/images/memory-allocation-strategies/pool_allocator.svg)
-</center>
+![Pool Allocator Layout](/images/memory-allocation-strategies/pool_allocator.svg#center)
 
 The question is how are these allocations and frees determined? And how do they provide very little fragmentation with allocations that can be made in any order?
 
@@ -38,30 +36,22 @@ The question is how are these allocations and frees determined? And how do they 
 
 A [free list](https://wikipedia.org/wiki/Free_list) is a data structure that internally stores a [linked-list](https://wikipedia.org/wiki/Linked_list) of the free slots/chunks within the memory buffer. The nodes of the list are stored in-place as this means that there does not need to be another data structure (e.g. array, list, etc) to keep track of the free slots. The data is _only_ stored _within_ the backing buffer of the pool allocator.
 
-<center>
-![Pool Allocator List](/images/memory-allocation-strategies/pool_allocator_list.svg)
-</center>
+![Pool Allocator List](/images/memory-allocation-strategies/pool_allocator_list.svg#center)
 
 The general approach is to store a header at the beginning of the chunk (not before the chunk like with the stack allocator) which _points_ to the next available free chunk[^free-chunk].
 [^free-chunk]: If there is not an available free chunk, it will point to nothing (`NULL`).
 
-<center>
-![Pool Allocator List In-Place](/images/memory-allocation-strategies/pool_allocator_list_inplace.svg)
-</center>
+![Pool Allocator List In-Place](/images/memory-allocation-strategies/pool_allocator_list_inplace.svg#center)
 
 ## Allocate and Free
 
 To allocate a chunk, just pop off the head (first element) from the free list. In [Big-O notation](https://wikipedia.org/wiki/Big_O_notation), the allocation has complexity of _**O(1)**_ (constant).
 
-<center>
-![Pool Allocator Alloc](/images/memory-allocation-strategies/pool_allocator_alloc.svg)
-</center>
+![Pool Allocator Alloc](/images/memory-allocation-strategies/pool_allocator_alloc.svg#center)
 
 **Note**: The free list does not need to be ordered as its order is determined by how chunks are allocated and freed.
 
-<center>
-![Pool Allocator Alloc Unordered](/images/memory-allocation-strategies/pool_allocator_alloc_unordered.svg)
-</center>
+![Pool Allocator Alloc Unordered](/images/memory-allocation-strategies/pool_allocator_alloc_unordered.svg#center)
 
 To free a chunk, just push the freed chunk as the head of the free list. In Big-O notation, the freeing of this memory has complexity of _**O(1)**_ (constant).
 

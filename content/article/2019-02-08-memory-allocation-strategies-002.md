@@ -21,15 +21,11 @@ The first memory allocation strategy that I will cover is also one of the simple
 The arena's logic only requires an offset (or pointer) to state the end of the last allocation[^other-data].
 [^other-data]: Other data may stored such as the offset of the beginning of the previous allocation or allocation count.
 
-<center>
-![Linear Allocator Layout](/images/memory-allocation-strategies/linear_allocator.svg)
-</center>
+![Linear Allocator Layout](/images/memory-allocation-strategies/linear_allocator.svg#center)
 
 To allocate some memory from the arena, it is as simple as moving the offset (or pointer) forward. In [Big-O notation](https://wikipedia.org/wiki/Big_O_notation), the allocation has complexity of _**O(1)**_ (constant).
 
-<center>
-![Linear Allocator Alloc](/images/memory-allocation-strategies/linear_allocator_alloc.svg)
-</center>
+![Linear Allocator Alloc](/images/memory-allocation-strategies/linear_allocator_alloc.svg#center)
 
 Due to being the simplest allocator possible, the arena allocator does not allow the user to free certain blocks of memory. The memory is usually freed all at once.
 

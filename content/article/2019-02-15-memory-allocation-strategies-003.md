@@ -26,21 +26,15 @@ As with the arena allocator, an offset into the memory block will be stored and 
 
 As with the extended arena in the [previous article](/article/2019/02/08/memory-allocation-strategies-002/), the offset of the previous allocation needs to be tracked. This is required in order to free memory on a _per-allocation_ basis. One approach is to store a _header_ which stores information about that allocation. This _header_ means that the allocator can know how far back it should move the offset to free that memory.
 
-<center>
-![Stack Allocator Layout](/images/memory-allocation-strategies/stack_allocator.svg)
-</center>
+![Stack Allocator Layout](/images/memory-allocation-strategies/stack_allocator.svg#center)
 
 To allocate some memory from the stack allocator, as with the arena allocator, it is as simple as moving the offset forward whilst accounting for the header. In [Big-O notation](https://wikipedia.org/wiki/Big_O_notation), the allocation has complexity of _**O(1)**_ (constant).
 
-<center>
-![Stack Allocator Alloc](/images/memory-allocation-strategies/stack_allocator_alloc.svg)
-</center>
+![Stack Allocator Alloc](/images/memory-allocation-strategies/stack_allocator_alloc.svg#center)
 
 To free a block, the header that is stored before the block of memory can be read in order to move the offset backwards. In Big-O notation, the freeing of this memory has complexity of _**O(1)**_ (constant).
 
-<center>
-![Stack Allocator Free](/images/memory-allocation-strategies/stack_allocator_free.svg)
-</center>
+![Stack Allocator Free](/images/memory-allocation-strategies/stack_allocator_free.svg#center)
 
 ## Header Storage
 
@@ -87,9 +81,7 @@ struct Stack_Allocation_Header {
 
 This padding stores the amount of bytes that has to be placed before the header in order to have the new allocation correctly aligned.
 
-<center>
-![Stack Allocator Header](/images/memory-allocation-strategies/stack_allocator_header.svg)
-</center>
+![Stack Allocator Header](/images/memory-allocation-strategies/stack_allocator_header.svg#center)
 
 **Note**: Storing the padding as a byte does limit the the maximum alignment that can used with this stack allocator to 128 bytes. If you require a higher alignment, increase the size of integer used to store the padding. To calculate the maximum alignment that the padding can be used for, use this equation:
 
