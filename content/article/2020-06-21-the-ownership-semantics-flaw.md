@@ -16,7 +16,7 @@ tags:
   - c++11
 ---
 
-I have had a theoretical idea I have been toying with for the past 18 months off-and-on in my head and I have not fully articulated it aloud yet. It is regarding the concept of _Ownership Semantics_ (OS) or _Move Semantics_ in programming languages. Fundamentally this article is a criticism of the concept and states that the concept is a duality of traditional OOP but applied to a different area.
+I have been toying with a theoretical idea for the past 18 months off-and-on in my head and I have not fully articulated it aloud yet. It is regarding the concept of _Ownership Semantics_ (OS) or _Move Semantics_ in programming languages. Fundamentally this article is a criticism of the concept and states that the concept is a duality of traditional OOP but applied to a different area.
 
 ## General Definitions of Terminology
 
@@ -44,7 +44,7 @@ Though the original conception of the term coined by Alan Kay[^original-alan-kay
 Most languages implement _Objects_ and _Classes_ in the Simula tradition; most of the notable OOP languages have a similar form by defining methods (member functions) with in the class definition. Traditionally languages such as Java can be classed as _solely_ an OOP language.
 
 
-Most traditional OOP languages are based around the concept of _inheritance_, a mechanism of deriving a class data type from another class data type and retaining similar information. Most people generally view inheritance as a combination of [subtyping](https://en.wikipedia.org/wiki/Subtyping) and [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch) through [virtual method tables (vtables)](https://en.wikipedia.org/wiki/Virtual_method_table). This is has lead to many discussions asking whether a language can be called as OOP if it does not support inheritance[^go-example].
+Most traditional OOP languages are based around the concept of _inheritance_, a mechanism of deriving a class data type from another class data type and retaining similar information. Most people generally view inheritance as a combination of [subtyping](https://en.wikipedia.org/wiki/Subtyping) and [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch) through [virtual method tables (vtables)](https://en.wikipedia.org/wiki/Virtual_method_table). This has lead to many discussions asking whether a language can be called as OOP if it does not support inheritance[^go-example].
 
 [^go-example]: The [Go programming language](https://golang.org/) does not support inheritance. However under my definition, Go is an OOP language but is designed around (implicit) `interface`s (a form of [type-classes](https://en.wikipedia.org/wiki/Type_class) or [structural typing](https://en.wikipedia.org/wiki/Structural_type_system)) as a way to compose objects, and methods can be applied to any user defined type; not just record types.
 
@@ -52,7 +52,7 @@ In recent times, _inheritance_ has been falling out of fashion in favour of _com
 
 [^composition-over-inheritance]: https://en.wikipedia.org/wiki/Composition_over_inheritance
 
-There are many criticisms of OOP[^brian-will-oop][^stepanov-oop][^rob-pike-oop-1][^rob-pike-oop-2][^cat-v-oop][^cat-v-joe-armstrong-oop] but my general criticism is that by placing emphasis on trying to solves problem in the type system, it shifts focus from the data structures and algorithms, [the core of what a program fundamentally is](/article/2020/05/31/progamming-pragmatist-proverbs/#the-concept-of-programming).
+There are many criticisms of OOP[^brian-will-oop][^stepanov-oop][^rob-pike-oop-1][^rob-pike-oop-2][^cat-v-oop][^cat-v-joe-armstrong-oop] but my general criticism is that by placing emphasis on trying to solve problem in the type system, it shifts focus from the data structures and algorithms, [the core of what a program fundamentally is](/article/2020/05/31/progamming-pragmatist-proverbs/#the-concept-of-programming).
 
 [^brian-will-oop]: https://www.youtube.com/watch?v=QM1iUe6IofM
 [^stepanov-oop]: http://www.stlport.org/resources/StepanovUSA.html
@@ -84,9 +84,9 @@ For most people, I am going to bet that methods, in languages with an emphasis o
 * Allowing methods as a form of syntactic sugar for writing calls in a _subject verb object_ manner e.g. `foo_do_thing(x, y)` vs `x.do_thing(y)`
 * Mental model of behaviour for objects
 
-From experience, I have found that long time uses of "OOP" languages eventually start treating methods primarily in the first two approaches.
+From experience, I have found that long time users of "OOP" languages eventually start treating methods primarily in the first two approaches.
 
-I will not go into depth about the other main aspects of OOP such as encapsulation, local retention, forms of polymorphism, etc, as for this article the hierarchical nature is the fundamental aspect of focus. The (linear) hierarchy of agency is the main problem. The reason why people argue for _composition over inheritance_ is that it flattens this linear hierarchy reducing its effect. It is the transition from [nominal typing](https://en.wikipedia.org/wiki/Nominal_type_system) to [structural typing](https://en.wikipedia.org/wiki/Structural_type_system), of which is more flexible because many data structures and problems have a _non-linear_ nature to them, which _linear_ approaches __cannot__ handle. When trying to adhere to the the strict hierarchical type system approaches, it leads to numerous issues because data is more commonly graph-like (non-linear) than tree-like (linear) for most problems. This strict hierarchy does occur with encapsulation at the object level too, a strict hierarchy of messages/references; this hierarchical nature arises from the concept agency itself, inheritance in not the root cause.
+I will not go into depth about the other main aspects of OOP such as encapsulation, local retention, forms of polymorphism, etc, as the hierarchical nature is the fundamental aspect of focus for this article. The (linear) hierarchy of agency is the main problem. The reason why people argue for _composition over inheritance_ is that it flattens this linear hierarchy reducing its effect. It is the transition from [nominal typing](https://en.wikipedia.org/wiki/Nominal_type_system) to [structural typing](https://en.wikipedia.org/wiki/Structural_type_system), which is more flexible because many data structures and problems have a _non-linear_ nature to them, which _linear_ approaches __cannot__ handle. When trying to adhere to the the strict hierarchical type system approaches, it leads to numerous issues because data is more commonly graph-like (non-linear) than tree-like (linear) for most problems. This strict hierarchy does occur with encapsulation at the object level too, a strict hierarchy of messages/references; this hierarchical nature arises from the concept agency itself, inheritance is not the root cause.
 
 **n.b.** Inheritance is not all bad and does have many real life practical uses, but these costs must be known before using them, like with any tool.
 
@@ -98,9 +98,9 @@ In this model of agency, the arena of agency can take on many forms, such as blo
 
 If we were to call Ownership Semantics a paradigm, it would be the orientation around the _responsibility of values_ in a hierarchical fashion, placing emphasis on this system of responsibility, shifting focus from data structures and algorithms.
 
-The concept of _responsibility_ and _ownership_ is similar to the real world counter parts in that to own something means to have exclusive use over it and full responsibility over it.
+The concept of _responsibility_ and _ownership_ is similar to the real world counter parts in that to own something means to have exclusive use and full responsibility over it.
 
-[Rust](https://www.rust-lang.org/) is a multi-paradigm programming language but at its core is an Ownership-Orientated language. Everything in Rust has a concept of _"ownership"_ and _lifetime_ associated with it. Rust is designed around trying to be first and foremost "safe", especially with regards to concurrency. Rust does derive from the C++ family in terms of philosophy and style, but uses a more [qualifier-focused](https://www.gingerbill.org/article/2018/03/12/on-the-aesthetics-of-the-syntax-of-declarations/) declaration syntax and many concepts from functional languages from the [ML family](https://en.wikipedia.org/wiki/ML_%28programming_language%29).
+[Rust](https://www.rust-lang.org/) is a multi-paradigm programming language but at its core is an Ownership-Orientated language. Everything in Rust has a concept of _"ownership"_ and _lifetime_ associated with it. Rust is designed around trying to be first and foremost "safe", especially with regards to concurrency. Rust derives from the C++ family in terms of philosophy and style, but uses a more [qualifier-focused](https://www.gingerbill.org/article/2018/03/12/on-the-aesthetics-of-the-syntax-of-declarations/) declaration syntax and many concepts from functional languages from the [ML family](https://en.wikipedia.org/wiki/ML_%28programming_language%29).
 
 _Lifetimes_ are theoretically orthogonal to _ownership_ but in practical, they usually are intrinsically coupled. I will not discuss the problems with object-based lifetimes in this article.
 
@@ -121,7 +121,7 @@ fn main() {
 
 ```
 
-Rust is an immutable-by-default language, but with the option to opt into mutability with `mut`. Immutability helps a lot with mathematical proofs for logic since things things can be "flattened" quite easily, but virtually all computers are fundamentally mutable things, even if the abstraction of immutability is a useful tool. As a result, the ownership semantics system requires a few more rules to take into account mutability, by adding the concept of "borrowing" through references. The general rules for the borrow checker are:
+Rust is an immutable-by-default language, with the option to opt into mutability with `mut`. Immutability helps a lot with mathematical proofs for logic since things things can be "flattened" quite easily, however virtually all computers are fundamentally mutable things, even if the abstraction of immutability is a useful tool. As a result, the ownership semantics system requires a few more rules to take into account mutability, by adding the concept of "borrowing" through references. The general rules for the borrow checker are:
 
 * Each value may have as many immutable borrows as you want
 * Each value may only have one mutable borrow at a time
@@ -144,12 +144,12 @@ Essentially, all of these approaches are bypassing the borrow checker in some fo
 
 ## Mathematical Formalism of Ownership Semantics
 
-Ownership semantics are a form of an [affine substructural type system](https://en.wikipedia.org/wiki/Substructural_type_system#Affine_type_systems)[^rediscovery][^other-terminology] which means that they are fundamentally described by a [linear logic](https://en.wikipedia.org/wiki/Linear_logic), and thus explains why it struggles to express _non-linear_ problems. Therefore ownership semantics and the borrow checker are fundamentally a linear tree (hierarchy) and not a non-linear graph, as described by its underlying formal logic. Many data structures and problems in real life are fundamentally _non-linear_, of which _linear_ approaches __cannot__ handle.
+Ownership semantics are a form of an [affine substructural type system](https://en.wikipedia.org/wiki/Substructural_type_system#Affine_type_systems)[^rediscovery][^other-terminology] which means that they are fundamentally described by a [linear logic](https://en.wikipedia.org/wiki/Linear_logic), and explains why it struggles to express _non-linear_ problems. Therefore ownership semantics and the borrow checker are fundamentally a linear tree (hierarchy) and not a non-linear graph, as described by its underlying formal logic. Many data structures and problems in real life are fundamentally _non-linear_, of which _linear_ approaches __cannot__ handle.
 
 [^rediscovery]: Whilst writing this article, I did not realize that this was already developed, and I accidentally rediscovered substructural type systems and linear logic, and had my own terminology for it. However, it is more appropriate to the more commonly used terminology.
 [^other-terminology]: <div>`XnYo` (X-use Y-owners), `?` (0/1), `2+` (2 or more), `N` (arbitrary uses)<br>Examples:<ul><li>`1u1o` (1-use 1-owner, linear owned-value)</li><li>`?u0o` (0/1-use 0-owners, affine non-owned-value)</li><li>`Nu1o` (N-uses 1-owner, normal owned-value)</li><li>`2+1o` (2+-uses 1-owner, relevant owned-value)</ul></div>
 
-In C++11 with introduction of move semantics, the STL include the concept of "smart pointers", each with different substructural logic.
+In C++11 with introduction of move semantics, the STL includes the concept of "smart pointers", each with different substructural logic.
 
 * `std::unique_ptr` - linear (1-use) self owning pointer  (1u1o)
 * `std::shared_ptr` - normal (N-use) self owning pointer  (Nu1o)
@@ -190,7 +190,7 @@ One thing many people will ask whilst reading this article is "if Ownership Sema
 
 In general, most hard problems cannot be solved at compile time; because of this, adding more and more concepts to the type system of the language will not help without adding extra costs. This does not mean ownership semantics is bad but not a solution for many problems in that domain.
 
-A lot of the problems related to responsibility are better solved with forms of "subsystems" within programs with handle groups of "things" and give out _handles_ of the "thing" instead of a direct reference. This is related to the approach many people use already to bypass the borrow checker through using indices/handles. Handles can contain a lot more information than a singular number. A common approach is to store a generation number alongside the index in the handle. If a generation has died, but the handle is asked to be used, the subsystem can give out a dummy sentinel value and report an error.
+A lot of the problems related to responsibility are better solved with forms of "subsystems" within programs which handle groups of "things" and give out _handles_ of the "thing" instead of a direct reference. This is related to the approach many people use already to bypass the borrow checker through using indices/handles. Handles can contain a lot more information than a singular number. A common approach is to store a generation number alongside the index in the handle. If a generation has died, but the handle is asked to be used, the subsystem can give out a dummy sentinel value and report an error.
 
 Other approaches are to reduce the need for responsibility in the first place. By keeping data structures [POD](https://en.wikipedia.org/wiki/Passive_data_structure), trivially copyable, and the zero value of it useful, can help you change the way you think about the problem at hand and simplify code. It places more emphasis on the data and algorithms themselves rather than the relationships between objects and types.
 
