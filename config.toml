@@ -15,6 +15,7 @@ staticDir = ["static"]
 
 [permalinks]
     article = "/article/:year/:month/:day/:slug/"
+    show = "/show/:slug/"
 
 [taxonomies]
     category = "category"
@@ -30,9 +31,13 @@ staticDir = ["static"]
     url = "/article/"
     weight = 2
 [[menu.main]]
+    name = "Podcast"
+    url = "/show/"
+    weight = 3
+[[menu.main]]
     name = "Odin"
     url = "/odin/"
-    weight = 3
+    weight = 4
 [[menu.main]]
     name = "Subscribe"
     url = "/article/index.xml"
