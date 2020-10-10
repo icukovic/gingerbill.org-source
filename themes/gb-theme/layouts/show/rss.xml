@@ -17,19 +17,19 @@
     </itunes:owner>
     <itunes:category text="Technology"/>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:image href="{{ .Site.BaseURL }}show/ginger_bill_show.png"/>
+    <itunes:image href="https://gingerbillshow.com/ginger_bill_show.png"/>
     {{ with .OutputFormats.Get "RSS" }}
         {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
     {{ range .Pages }}
     <item>
       <title>{{ .Title }}</title>
-      <link>{{ .Permalink }}</link>
+      <link>https://gingerbillshow.com{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
-      <enclosure url="{{.Site.BaseURL}}show/{{ .Params.audio }}" type="audio/mpeg"/>
+      <enclosure url="https://gingerbillshow.com/{{ .Params.audio }}" type="audio/mpeg"/>
       <itunes:author>Ginger Bill</itunes:author>
       <itunes:summary>Episode {{ .Slug}}</itunes:summary>
     </item>
