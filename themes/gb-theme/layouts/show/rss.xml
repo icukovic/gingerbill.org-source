@@ -1,0 +1,37 @@
+
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" version="2.0">
+  <channel>
+    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>The Ginger Bill Show</description>{{ with .Site.LanguageCode }}
+    <copyright>Ginger Bill 2020</copyright>
+    <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
+    <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
+    <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    <itunes:summary>The Ginger Bill Show</itunes:summary>
+    <itunes:owner>
+      <itunes:name>Ginger Bill</itunes:name>
+      <itunes:email>show@gingerbill.org</itunes:email>
+    </itunes:owner>
+    <itunes:category text="Technology"/>
+    <itunes:explicit>false</itunes:explicit>
+    {{ with .OutputFormats.Get "RSS" }}
+        {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{ end }}
+    {{ range .Pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Summary | html }}</description>
+      <enclosure url="{{.Site.BaseURL}}show/{{ .Params.audio }}" type="audio/mpeg"/>
+      <itunes:author>Ginger Bill</itunes:author>
+      <itunes:summary>Episode {{ .Slug}}</itunes:summary>
+    </item>
+    {{ end }}
+  </channel>
+</rss>

@@ -2,6 +2,9 @@
 {{if not .IsHome }}
 <h1>{{ .Title | markdownify }}</h1>
 {{ end }}
+<p><a href="index.xml">RSS Feed</a></p>
+<br>
+
 {{ .Content }}
 <ul class="articles">
   {{ range (where .Data.Pages "Section" "!=" "") }}

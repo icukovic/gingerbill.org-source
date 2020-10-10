@@ -1,0 +1,21 @@
+{{ partial "header.html" . }}
+<main>
+<article class="article-meta">
+<header>
+	{{ with .Params.hide_title }}{{ else }}<h1>{{ .Title | markdownify }}</h1>{{ end }}
+	{{ with .Slug }} <h2>Episode {{ . | markdownify }}</h2>{{ end }}
+	{{ with .Description }} <h2>{{ . | markdownify }}</h2>{{ end }}
+	<div class="info">
+		<p>
+		{{ if (gt .Params.date 0) }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
+		</p>
+	</div>
+	<audio controls>
+		<source src="/show/{{ .Params.audio }}" type="audio/mpeg"/>
+		<a href src="/show/{{ .Params.audio }}" type="audio/mpeg">Episode {P.Slug}}</a>
+	</audio>
+</header>
+{{ .Content }}
+</article>
+</main>
+{{ partial "footer.html" . }}
