@@ -16,6 +16,7 @@
       <itunes:email>show@gingerbill.org</itunes:email>
     </itunes:owner>
     <itunes:category text="Technology"/>
+    <itunes:image href="{{} .Site.BaseURL }show/ginger_bill_show.png"/>
     <itunes:explicit>false</itunes:explicit>
     {{ with .OutputFormats.Get "RSS" }}
         {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
