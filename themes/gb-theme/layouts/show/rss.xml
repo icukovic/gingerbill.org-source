@@ -1,3 +1,4 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -36,6 +37,7 @@
       <enclosure url="https://gingerbillshow.com/{{ .Params.audio }}" type="audio/mpeg" length="{{ .Params.audio_size }}" />
       <itunes:author>Ginger Bill</itunes:author>
       <itunes:summary>Episode {{ .Slug}}</itunes:summary>
+      {{ with .Params.duration }}<itunes:duration>{{.}}</itunes:duration>{{end}}
     </item>
     {{ end }}
   </channel>

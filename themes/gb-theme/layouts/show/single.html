@@ -3,7 +3,7 @@
 <article class="article-meta">
 <header>
 	{{ with .Params.hide_title }}{{ else }}<h1>{{ .Title | markdownify }}</h1>{{ end }}
-	{{ with .Slug }} <h2>Episode {{ . | markdownify }}</h2>{{ end }}
+	{{ with .Slug }} <h2>Ginger Bill Show &ndash; Episode {{ . | markdownify }}</h2>{{ end }}
 	{{ with .Description }} <h2>{{ . | markdownify }}</h2>{{ end }}
 	<div class="info">
 		<p>
@@ -12,7 +12,7 @@
 	</div>
 	<audio controls>
 		<source src="/show/{{ .Params.audio }}" type="audio/mpeg"/>
-		<a href src="/show/{{ .Params.audio }}" type="audio/mpeg">Episode {P.Slug}}</a>
+		<a href src="/show/{{ .Params.audio }}" type="audio/mpeg">Episode {{.Slug}} Audio</a>
 	</audio>
 </header>
 {{ .Content }}
