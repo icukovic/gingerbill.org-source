@@ -55,7 +55,7 @@ For the vast majority of problems, especially the problems novices have, if you 
 
 ## Teaching
 
-When teaching novices, I have found that there are usually too different kinds of people (sometimes embodied in the same person):
+When teaching novices, I have found that there are usually two different kinds of people (sometimes embodied in the same person):
 
 * Novices who are stuck worrying about how to best implement their programs, but do not actually understand what the _purpose_ of the program they are trying to do
 * Novices who understand what the purpose, function, and usage, of what their program is, but do not know the tools well enough about how to implement stuff
