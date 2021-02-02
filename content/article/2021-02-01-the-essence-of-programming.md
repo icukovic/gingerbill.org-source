@@ -80,7 +80,7 @@ Sometimes the implementation of something is difficult to determine, as hard pro
 
 There is no such thing as an unqualified universal _"best way"_ to solve a given problem in the abstract. And what is needed to be done is to understand the particular situations that requires one to attend to such problems. Compromise is a given, and the only way to get better is to practice, practice, practice. Abstract solutions are called algorithms, but how that algorithm is implemented depends on what it will be implemented on---the machine.
 
-For novices, it should be made clear that being taught tools (e.g algorithms, data structures, paradigms, idioms, etc), does not imply that the "correct way" to do things has been learnt. The "correct way" is heavily specific to the problem domain; this cannot be taught but only learnt through experience over many years. Making abstract ideas concrete by actualizing them into reality is difficult to do, even for veterans to programming.
+For novices, it should be made clear that being taught tools (e.g algorithms, data structures, paradigms, idioms, etc), does not imply that the "correct way" to do things has been learnt. The "correct way" is heavily specific to the problem domain; this cannot be taught but only learnt through experience over many years. Actualizing abstract ideas into reality is difficult to do, even for veterans to programming.
 
 Aiming to abstract/generalize a problem is a recipe for disaster, especially for novices, because it is rarely ever the case problems are abstract/general. Most problems are particular/specific, and require knowledge of the domain of that problem. Application is should not be separated from the teaching of the topic. Try to solve the _specific_ problem that is actually at hand, not a _general_ problem that _might_ exist[^previous-article]. Programming is an inherently practical endeavour rather than a theoretical one. And its teaching should reflect that. Theory is important, but most programmers do not want to, nor should they, have to become mathematicians in order to understand the application of anything.
 
@@ -92,6 +92,6 @@ It should be clearly noted that this ordering only works for solving known probl
 
 ## Conclusion
 
-Understanding the essence of what a tool is helps us structure our thinking when solving problems. It gives us a language and process to understand why and how we approach building tools. Many novices fall into the same trap of not understanding the problem that is trying to be solved, and are too concerned about the implementation.
+Understanding the essence of what a tool is helps us structure our thinking when solving problems. It gives us a language and process to understand why and how we approach building tools. Many novices fall into the same trap of not understanding the problem that is trying to be solved, and are too concerned about the implementation. Teaching novices how to think about solving problems is extremely important in improving and honing in the craft.
 
 [^previous-article]: https://www.gingerbill.org/article/2020/05/31/progamming-pragmatist-proverbs/
