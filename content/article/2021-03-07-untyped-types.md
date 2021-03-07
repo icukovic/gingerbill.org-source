@@ -50,7 +50,7 @@ In C, there is a set of rules called the "usual arithmetic conversions" which ar
 
 ### Model-2
 
-Model-2 has quite a different and can be very foreign to think about if you are so used to Model-1. Model-2 treats values closer to how most people intuitively think about them. The literal `123.0` just represents the _number_ one hundred and twenty three. It has no intrinsic type to it, it's just a value. Applying this idea to a programming language, the value literal `123.0` can be represented by a whole range of different types.
+Model-2 is quite and can be very foreign to think about if you are so used to Model-1. Model-2 treats values closer to how most people intuitively think about them. The literal `123.0` just represents the _number_ one hundred and twenty three. It has no intrinsic type to it, it's just a value. Applying this idea to a programming language, the value literal `123.0` can be represented by a whole range of different types.
 
 In Odin, all of these examples will work with the same value literal:
 ```odin
