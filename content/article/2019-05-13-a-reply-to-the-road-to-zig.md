@@ -42,7 +42,7 @@ From experience of programming and the current programming culture, the second s
 [^left-pad]: See the Left-Pad Package causing severe issues across many other piece of code, <https://en.wikipedia.org/wiki/Npm_(software)#Notable_breakages>.
 
 
-However, my biggest gripe is the first point: write quality software. I wholeheartedly believe that writing quality software is not due to the issues of the programming language but the lack of incentives to make quality software and general culture around programming[^handmade-manifesto]. Humans are flawed beings and are incentive focused. Unless we have an incentive to do something, we are very unlikely to do it. There are many languages that are striving for robustness in the code, such as Rust and Ada, but the ensure robustness and quality, a robust and quality culture will be required to enforce it.
+However, my biggest gripe is the first point: write quality software. I wholeheartedly believe that writing quality software is not due to the issues of the programming language but the lack of incentives to make quality software and general culture around programming[^handmade-manifesto]. Humans are flawed beings and are incentive focused. Unless we have an incentive to do something, we are very unlikely to do it. There are many languages that are striving for robustness in the code, such as Rust and Ada, but to ensure robustness and quality, a robust and quality culture will be required to enforce it.
 
 [^handmade-manifesto]: For a possible way to improve the culture, please see the [Handmade.Network](https://handmade.network/manifesto)
 
@@ -146,7 +146,7 @@ If you like the sound of it and want to find out more, please check it out at <h
 
 Throughout this article, I have been discussing Zig and its issues. Why do I recommend Odin over Zig?
 
-Odin is not trying to solve the problem of _quality software_ as that is fundamentally a cultural problem. The Odin programming language is fast, concise, readable, pragmatic, and open sourced. It is designed with the intent of replacing C with the following goals:
+Odin is not trying to solve the problem of _quality software_ as that is fundamentally a cultural problem. The Odin programming language is fast, concise, readable, pragmatic, and open sourced. It is designed with the intent of being an alternative to C with the following goals:
 
 * simplicity
 * high performance
@@ -159,7 +159,7 @@ At the turn of 2016, I gave myself a New Year's Resolution to start any new pers
 
 The project started one evening in late July 2016 when I was annoyed with programming in C++ (not a new project). The language began as a Pascal clone (with begin and end and more) but changed quite quickly to become something else.
 
-Odin borrows heavily from (in order of philosophy and impact): Pascal, C, Go, Oberon. [Niklaus Wirth](https://en.wikipedia.org/wiki/Niklaus_Wirth) and [Rob Pike](https://en.wikipedia.org/wiki/Rob_Pike) have been the programming language design idols throughout this project. Simplicity was always a deriving force in the design, but as I found very early on, simplicity is complex.
+Odin borrows heavily from (in order of philosophy and impact): Pascal, C, Go, Oberon. [Niklaus Wirth](https://en.wikipedia.org/wiki/Niklaus_Wirth) and [Rob Pike](https://en.wikipedia.org/wiki/Rob_Pike) have been the programming language design idols throughout this project. Simplicity was always a deriving force in the design, but as I found very early on, simplicity is complicated.
 
 The design underwent a lot of revisions and experiments in the very early stages as I did not know what was optimal for increasing my productivity. I knew the basic concepts of what I wanted but that was it. Concepts such as the package system took nearly a year to flesh-out and design as it took a while to discover what were the actual problems with certain approaches.
 
