@@ -46,7 +46,7 @@ x := try foo();
 
 This construct solves a very specific kind of error handling, of which optimizes for typing code rather than reading code. It also fails because Odin (and Go) are languages with multiple return values rather than single-type returns.
 
-And the more I think about it, the `if err != nil { return nil }` and similar stuff may be the least worst option, and the best in terms of readability.
+And the more I think about it, the `if err != nil { return err }` and similar stuff may be the least worst option, and the best in terms of readability.
 
 It's a question of whether you are optimizing for reading or typing, and in Odin, it has usually been reading.
 
