@@ -50,7 +50,7 @@ And the more I think about it, the `if err != nil { return err }` and similar st
 
 It's a question of whether you are optimizing for reading or typing, and in Odin, it has usually been reading.
 
-And something like `x := try foo();` instead of `x, err := foo(); if err != nil { return err }` does return typing but `try` is a lot harder to catch. (even with syntax highlighting).
+And something like `x := try foo();` instead of `x, err := foo(); if err != nil { return err }` does reduce typing but `try` is a lot harder to catch. (even with syntax highlighting).
 
 It happens that Go already declined such a [proposal](https://github.com/golang/go/issues/32437#issuecomment-512035919
 ) for numerous reasons. And the research done for this is directly applicable to Odin because both language share the multiple return value semantics.
