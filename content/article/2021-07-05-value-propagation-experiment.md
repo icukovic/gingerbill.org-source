@@ -75,7 +75,7 @@ The other issue when people pass the error up the stack for someone else to hand
 
 And my hypothesis for this phenomenon is due to the very nature of this "degenerative type".
 
-Now a design judgement is to be made when designing a language: is such a concept worth it for the problems it intrinsically has. For Odin, I do not think it was worth it. In Odin's, errors are just values, and not something special. For other languages? That's another thing. For Odin, I have found that having an error value type defined per package is absolutely fine (and ergonomic too), and minimizes, but cannot remove, the problem value propagation across library boundaries.
+Now a design judgement is to be made when designing a language: is such a concept worth it for the problems it intrinsically has. For Odin, I do not think it was worth it. In Odin, errors are just values, and not something special. For other languages? That's another thing. For Odin, I have found that having an error value type defined per package is absolutely fine (and ergonomic too), and minimizes, but cannot remove, the problem value propagation across library boundaries.
 
 ## Summary
 
