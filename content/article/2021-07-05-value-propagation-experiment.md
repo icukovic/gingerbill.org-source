@@ -84,4 +84,4 @@ Now a design judgement is to be made when designing a language: is such a concep
 `try x else y` has now become `or_else(x, y)` which is useful.
 
 
-n.b. I am not criticizing any particular language's design for doing this, but rather saying that it does work well for Odin's semantics nor philosophy.
+n.b. I am not criticizing any particular language's design for doing this, but rather saying that it does not work well for Odin's semantics nor philosophy.
