@@ -69,7 +69,7 @@ One thing I did not comment on in the that article is the cause of the problem (
 
 So in languages with exceptions, all exception values can degenerate to the "base type". In Rust, it can either go to the base trait or be inferred parametrically. In Zig it can either do `anyerror` or it will infer the error set from usage. Go has the built-in interface type `error` which acts as the common degenerate value.
 
-As I discuss in the article, I am not against error value propagation within a library, but I am pretty much always against it **_across_** library boundaries. A degenerate state has high entropy and a lack of specific information. And due to this form of type erasure, "downcasting" (broad use of term) is a way to recover the information, but it assumes implicit information which is not know in the type system itself.
+As I discuss in the article, I am not against error value propagation within a library, but I am pretty much always against it **_across_** library boundaries. A degenerate state has high entropy and a lack of specific information. And due to this form of type erasure, "downcasting" (broad use of term) is a way to recover the information, but it assumes implicit information which is not known in the type system itself.
 
 The other issue when people pass the error up the stack for someone else to handle (something I criticize in the previous article already) is that it's common to see this in many codebases already that have such a type: Go, Rust, and Zig (public) codebases exhibit this a lot.
 
