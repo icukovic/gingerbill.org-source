@@ -17,6 +17,8 @@ tags:
 
 **[Originally from a Twitter Thread]**
 
+[Part 2 of this Experiment](/article/2021/09/06/value-propagation-experiment-part-2/)
+
 ## The Idea
 
 I recently experimented with adding a feature into [Odin](https://odin-lang.org/) which allowed for a way to propagate a value by early returning if that value was `false` or not `nil`. It was in a similar vein to Rust's `try!` which became [`?`](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html), or Zig's [`try`](https://ziglang.org/documentation/master/#try), etc.
@@ -85,3 +87,6 @@ Now a design judgement is to be made when designing a language: is such a concep
 
 
 n.b. I am not criticizing any particular language's design for doing this, but rather saying that it does not work well for Odin's semantics nor philosophy.
+
+
+[Part 2 of this Experiment](/article/2021/09/06/value-propagation-experiment-part-2/)
