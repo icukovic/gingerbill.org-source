@@ -77,7 +77,7 @@ I do believe that my general hypotheses are still correct regarding exception-li
 * Cultural lack of partial success states
 
 
-The most important one is the degenerate state issue, where all values can generate to a single type. It appears that you and many others pretty much only want to know if there was an error value or not and then pass that up the stack, writing your code as if it was purely the happy path and then handling any error value. Contrasting with Go, Go a built-in concept of an `error` interface, and all `error` values degenerate to this interface. In practice from what I have seen of many Go programmers, most people just don't handle error values and just pass them up the stack to a very high place and then pretty much handle any error state as they are all the same degenerate value: "error or not". This is now equivalent to a fancy boolean.
+The most important one is the degenerate state issue, where all values can degenerate to a single type. It appears that you and many others pretty much only want to know if there was an error value or not and then pass that up the stack, writing your code as if it was purely the happy path and then handling any error value. Contrasting with Go, Go a built-in concept of an `error` interface, and all `error` values degenerate to this interface. In practice from what I have seen of many Go programmers, most people just don't handle error values and just pass them up the stack to a very high place and then pretty much handle any error state as they are all the same degenerate value: "error or not". This is now equivalent to a fancy boolean.
 
 ----
 
