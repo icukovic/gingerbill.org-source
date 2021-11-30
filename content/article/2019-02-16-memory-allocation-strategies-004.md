@@ -200,4 +200,4 @@ void pool_free_all(Pool *p) {
 
 The pool allocator is a very useful allocator for when you need to allocator "things" in _chunks_ and the things within those chunks share the same lifetime. The full source code is [available here](/code/memory-allocation-strategies/part004.c).
 
-In this next article(s), I will discuss virtual memory and allocating of physical pages from the OS.
+In the next article, I will discuss free list memory allocators.
