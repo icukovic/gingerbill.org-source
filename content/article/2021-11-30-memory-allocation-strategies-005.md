@@ -23,7 +23,7 @@ There are two common approaches to implementing a free list allocator: one using
 
 # Linked List Approach
 
-As the title of this section suggests, we'll be using a linked to store the address of free contiguous blocks in the memory along with its size. When the user requests memory, it searches in the linked list for a block where the data can fit. It then removes the element from the linked list and places an allocation header (which is required on free) just before the data (similar to what we used in the article on [stack allocators](/article/2019/02/15/memory-allocation-strategies-003/#data-structures)).
+As the title of this section suggests, we'll be using a linked list to store the address of free contiguous blocks in the memory along with its size. When the user requests memory, it searches in the linked list for a block where the data can fit. It then removes the element from the linked list and places an allocation header (which is required on free) just before the data (similar to what we used in the article on [stack allocators](/article/2019/02/15/memory-allocation-strategies-003/#data-structures)).
 
 For freeing memory, we recover the allocation header (stored before the allocation) to know the size of the block we want to free. Once that block has been freed, it is inserted into the linked list, and then we try to _coalescence_ contiguous blocks of memory together to create larger blocks.
 
@@ -100,7 +100,7 @@ In the diagram there three free memory blocks, but not all are appropriate for t
 When an allocation has been made, the free list will then be corrected to remove the used node.
 ![Free List Allocator Allocate Store](/images/memory-allocation-strategies/free_list_allocator_alloc2.svg#center)
 
-This algorithm has a time complexity of _**O(N)**_, where N is the new of free blocks in the free list.
+This algorithm has a time complexity of _**O(N)**_, where N is the number of free blocks in the free list.
 
 
 ```c
@@ -204,7 +204,7 @@ When freeing a memory block that was allocator with our free list allocator, we 
 
 When the insert of the free list, we want to coalescence any free memory blocks which are contiguous. When we were iterating across linked list we had to store both the previous and next free nodes, this means that we may be able to merge these blocks together if possible. 
 
-This algorithm has a time complexity of _**O(N)**_, where N is the new of free blocks in the free list.
+This algorithm has a time complexity of _**O(N)**_, where N is the number of free blocks in the free list.
 
 ![Free List Allocator Free and Coalescence](/images/memory-allocation-strategies/free_list_allocator_free.svg#center)
 
@@ -299,7 +299,7 @@ The minor increase in space complexity is due to instead of using a singly linke
 
 This implementation is a common aspect in many `malloc` implementations, but note that most `malloc`s utilize multiple different memory allocation strategies that complement each other.
 
-I will not demonstrate how to implement this approach in this article at leave it as an small exercise for the reader. The following diagram may help:
+I will not demonstrate how to implement this approach in this article and leave it as an small exercise for the reader. The following diagram may help:
 
 ![Free List Red-Black Tree](/images/memory-allocation-strategies/free_list_allocator_red_black_tree.svg#center)
 
