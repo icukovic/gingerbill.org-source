@@ -13,7 +13,7 @@ tags:
 
 # Free List Based Allocation
 
-In thre previous article, we looked at the [pool allocator](/article/2019/02/16/memory-allocation-strategies-004/), which splits the supplied backing buffer into _chucks_ of equal size and keeps track of which of the chunks are free. Pool allocators are fast allocators that allow for out of order free in constant time _**O(1)**_ whilst keeping very little fragmentation. The main restriction of a pool allocator is that every memory allocation must be of the same size.
+In the previous article, we looked at the [pool allocator](/article/2019/02/16/memory-allocation-strategies-004/), which splits the supplied backing buffer into _chucks_ of equal size and keeps track of which of the chunks are free. Pool allocators are fast allocators that allow for out of order free in constant time _**O(1)**_ whilst keeping very little fragmentation. The main restriction of a pool allocator is that every memory allocation must be of the same size.
 
 
 
