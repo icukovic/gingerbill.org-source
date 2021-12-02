@@ -13,7 +13,7 @@ tags:
 
 # Free List Based Allocation
 
-In the previous article, we looked at the [pool allocator](/article/2019/02/16/memory-allocation-strategies-004/), which splits the supplied backing buffer into _chucks_ of equal size and keeps track of which of the chunks are free. Pool allocators are fast allocators that allow for out of order free in constant time _**O(1)**_ whilst keeping very little fragmentation. The main restriction of a pool allocator is that every memory allocation must be of the same size.
+In the previous article, we looked at the [pool allocator](/article/2019/02/16/memory-allocation-strategies-004/), which splits the supplied backing buffer into _chunks_ of equal size and keeps track of which of the chunks are free. Pool allocators are fast allocators that allow for out of order free in constant time _**O(1)**_ whilst keeping very little fragmentation. The main restriction of a pool allocator is that every memory allocation must be of the same size.
 
 
 
@@ -200,7 +200,7 @@ void *free_list_alloc(Free_List *fl, size_t size, size_t alignment) {
 
 ## Free and Coalescence
 
-When freeing a memory block that was allocator with our free list allocator, we need to retrieve the allocation header and that memory block to be treated as a free memory block now. We then need to iterate across the linked list of free memory blocks until will get to the right position in memory order (as the link list is sorted), and then insert new at that position. This can be achieved by looking at the previous and next nodes in the list since they are already sorted by address.
+When freeing a memory block that was allocated with our free list allocator, we need to retrieve the allocation header and that memory block to be treated as a free memory block now. We then need to iterate across the linked list of free memory blocks until will get to the right position in memory order (as the link list is sorted), and then insert new at that position. This can be achieved by looking at the previous and next nodes in the list since they are already sorted by address.
 
 When the insert of the free list, we want to coalescence any free memory blocks which are contiguous. When we were iterating across linked list we had to store both the previous and next free nodes, this means that we may be able to merge these blocks together if possible. 
 
@@ -293,7 +293,7 @@ size_t calc_padding_with_header(uintptr_t ptr, uintptr_t alignment, size_t heade
 
 # Red Black Tree Approach
 
-The other way of implementing a free list is with a [red black tree](https://wikipedia.org/wiki/Red%E2%80%93black_tree); the purpose of which is improve the speed at which allocations and deallocations can be done in. The linked list from above, any operation made is needed to be iterated across linearly (_**O(N)**_). A red black reduces its time complexity to _**O(log(N))**_, whilst keeping the space complexity relatively low (using the same trick as before by storing the tree data within the free memory blocks). And as a consequence of this data-structure approach, a _best-fit_ algorithm may be taken always (in order to reduce fragmentation whilst keeping the allocation/deallocation speed).
+The other way of implementing a free list is with a [red black tree](https://wikipedia.org/wiki/Red%E2%80%93black_tree); the purpose of which is to improve the speed at which allocations and deallocations can be done in. The linked list from above, any operation made is needed to be iterated across linearly (_**O(N)**_). A red black reduces its time complexity to _**O(log(N))**_, whilst keeping the space complexity relatively low (using the same trick as before by storing the tree data within the free memory blocks). And as a consequence of this data-structure approach, a _best-fit_ algorithm may be taken always (in order to reduce fragmentation whilst keeping the allocation/deallocation speed).
 
 The minor increase in space complexity is due to instead of using a singly linked list, a (sorted) doubly linked is required, but as a consequence, it allows coalescence operations in __*O(1)*__ time. 
 
@@ -308,5 +308,5 @@ I will not demonstrate how to implement this approach in this article and leave 
 
 The free list allocator is a very useful allocator for when you need to general purpose allocator that requires allocations of arbitrary size and out of order deallocations. 
 
-In the next article, I will discuss the buddy memory allocator.
+In the next article, I will discuss the [buddy memory allocator](/article/2021/12/02/memory-allocation-strategies-006/).
 
