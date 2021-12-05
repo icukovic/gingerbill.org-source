@@ -104,6 +104,9 @@ This algorithm has a time complexity of _**O(N)**_, where N is the number of fre
 
 
 ```c
+// Defined Memory Allocation Strategies Part 3: /article/2019/02/15/memory-allocation-strategies-003/#alloc
+size_t calc_padding_with_header(uintptr_t ptr, uintptr_t alignment, size_t header_size);
+
 Free_List_Node *free_list_find_first(Free_List *fl, size_t size, size_t alignment, size_t *padding_, Free_List_Node **prev_node_) {
     // Iterates the list and finds the first free block with enough space 
     Free_List_Node *node = fl->head;
@@ -112,7 +115,7 @@ Free_List_Node *free_list_find_first(Free_List *fl, size_t size, size_t alignmen
     size_t padding = 0;
     
     while (node != NULL) {
-        padding = calc_padding_wnodeh_header((uintptr_t)node, (uintptr_t)alignment, sizeof(Free_List_Allocation_Header));
+        padding = calc_padding_with_header((uintptr_t)node, (uintptr_t)alignment, sizeof(Free_List_Allocation_Header));
         size_t required_space = size + padding;
         if (node->block_size >= required_space) {
             break;
@@ -136,7 +139,7 @@ Free_List_Node *free_list_find_best(Free_List *fl, size_t size, size_t alignment
     size_t padding = 0;
     
     while (node != NULL) {
-        padding = calc_padding_wnodeh_header((uintptr_t)node, (uintptr_t)alignment, sizeof(Free_List_Allocation_Header));
+        padding = calc_padding_with_header((uintptr_t)node, (uintptr_t)alignment, sizeof(Free_List_Allocation_Header));
         size_t required_space = size + padding;
         if (node->block_size >= required_space && (it.block_size - required_space < smallest_diff)) {
             best_node = node;
@@ -284,10 +287,7 @@ void free_list_node_remove(Free_List_Node **phead, Free_List_Node *prev_node, Fr
     } else { 
         prev_node->next = del_node->next; 
     } 
-} 
-
-// Defined Memory Allocation Strategies Part 3: /article/2019/02/15/memory-allocation-strategies-003/#alloc
-size_t calc_padding_with_header(uintptr_t ptr, uintptr_t alignment, size_t header_size);
+}
 ```
 
 
