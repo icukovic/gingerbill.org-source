@@ -123,4 +123,4 @@ It might be the approach taken by Odin may be extremely unique to Odin, however 
 
 If anyone has any more information about this topic, please feel free to contact me with it! 
 
-P.S. If there is no research done into this area, it is a good since since there is so much left to discover in Programming Language Theory.
+P.S. If there is no research done into this area, it is a good sign since there is so much left to discover in Programming Language Theory.
