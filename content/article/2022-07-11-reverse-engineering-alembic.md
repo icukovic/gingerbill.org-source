@@ -73,7 +73,7 @@ The `wflag` is there to allow writing to the file and prevent other applications
 
 All grouped-based offsets in the Ogawa format are stored in a 64-bit unsigned little endian integer (`u64le`) representing the number of bytes from the base of the file[^offset-design].
 
-[^offset-design]: I'm a huge fan of file binary formats designed this way where they use effectively internal [relative pointers](http://localhost:1313/article/2020/05/17/relative-pointers/), of which I should explain my preferred approach to designing binary file format in the future.
+[^offset-design]: I'm a huge fan of file binary formats designed this way where they use effectively internal [relative pointers](/article/2020/05/17/relative-pointers/), of which I should explain my preferred approach to designing binary file format in the future.
 
 These group-based offsets come in two different flavours: an _Ogawa Group_ or an _Ogawa Data (byte stream)_. The offset encodes a flag in its highest bit (63rd bit) to indicate which flavour: Group if 0 and Data if 1. The remaining 63-bits represent the offset to this specific kind of value; if the remaining 63-bits are all zero, it means it is a terminating value (not pointing to any actual memory).
 
