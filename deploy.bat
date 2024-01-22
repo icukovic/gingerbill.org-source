@@ -11,6 +11,7 @@ git commit -m %1
 git push GitHub master
 
 pushd public
+git pull
 call git add .
 
 git commit -m %1
