@@ -4,7 +4,7 @@ if [%*] == [] goto error
 
 echo Deploying updates to GitHub...
 
-call hugo
+call C:\Hugo\hugo
 
 call git add .
 git commit -m %1
