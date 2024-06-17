@@ -13,6 +13,8 @@ tags:
 
 _NOTE: This is based on, but completely rewritten, from a Twitter post: <https://x.com/TheGingerBill/status/1802645945642799423>_
 
+**TL;DR** It makes Go _feel_ too "functional" rather than being an unabashed imperative language.
+
 I recently saw a post on [Twitter](https://x.com/ohmypy/status/1801180323406844062) showing the upcoming Go iterator design for Go 1.23 (August 2024). From what I can gather, many people seem to dislike the design. I wanted to give my thoughts on it as a language designer.
 
 The _merged PR_ for the proposal can be found here: <https://github.com/golang/go/issues/61897>
@@ -89,7 +91,9 @@ func Pairs[V any](seq iter.Seq[V]) iter.Seq2[V, V] {
 }
 ```
 
-## An Alternative Pseudo-Propsoal
+## An Alternative Pseudo-Proposal (State Machine)
+
+**NOTE:** I am not suggesting Go does this whatsoever.
 
 When designing [Odin](https://odin-lang.org/), I wanted the ability for the user to design their own kind of "iterators", but have them be very simple; in fact, just normal procedures. I didn't want to add a special construct to the language just for this---this would complicate the language too much which is what I wanted to minimize in Odin.
 
@@ -266,5 +270,10 @@ C++ "iterators" are a hell of a lot more complicated than Go's iterators but the
 
 I feel like Go's iterators do make sense with the design principles applied to them **BUT** _seem_ antithetical to what most people view Go as being. I know Go "has had to" get more complex over the years, especially with the introduction of Generics (which I do think are actually well designed, with only a few syntax quibbles), but the introduction of iterators of this ilk _feels_ wrong.
 
+I think the short of it is that it feels like it goes against the apparent philosophy of Go that many people believe, coupled with it being a very functional way of doing things rather than imperative.
+
+And because of those reasons, I think that is why people don't like the iterator stuff, even if I completely understand the design choices made. It doesn't "feel" like what Go original was to many people.
+
 Maybe the concerns of mine (and others) are overblown and most people will never actually implement them and just use them, and that them being this complicated to implement.
 
+Last controversial take: if it was me, I would just not have allowed custom iterators into Go whatsoever, but I am not on the Go team (nor do I want to be).
