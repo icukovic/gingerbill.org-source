@@ -276,4 +276,6 @@ And because of those reasons, I think that is why people don't like the iterator
 
 Maybe the concerns of mine (and others) are overblown and most people will never actually implement them and just use them, and that them being this complicated to implement.
 
+Second to last controversial take: Maybe Go needed to "gate-keep" even more and just tell the "functional-bros" to go away and stop asking for such features which make Go a much more complicated and complex language.
+
 Last controversial take: if it was me, I would just not have allowed custom iterators into Go whatsoever, but I am not on the Go team (nor do I want to be).
