@@ -43,7 +43,7 @@ Just look at all the hyped JavaScript frameworks out there, and do they really m
 
 This is probably why some of my "hot takes" have been doing the rounds every now and then. I am trying to find out what the actual problems are and see what possible options there are to either solve or mitigate them on a case-by-case basis. A lot of those "hot takes" have been a form of marketing, and I am trying to at least give myself some exposure. Every single of them is just my opinion, which I usually think is quite mundane too. The web is huge, and thus there will be people who think those takes are shocking.
 
-And to be clear I don't want to make Odin "hypeable" in the first place. I am glad with the steady, stable, and albeit slow, growth that Odin has been getting. The people who try Odin out, pretty much always stay for the longhaul as they fall in love with the language since it does bring them the "joy of programming" back. Something which I do advertise on the [Odin website](https://odin-lang.org/) the "joy of programming" aspect, but that is something that cannot be explained in words, but rather has to be experienced to believe.
+And to be clear I don't want to make Odin "hypeable" in the first place. I am glad with the steady, stable, and albeit slow, growth that Odin has been getting. The people who try Odin out, pretty much always stay for the longhaul as they fall in love with the language since it does bring them the "joy of programming" back. Something which I do advertise on the [Odin website](https://odin-lang.org/) is the "joy of programming" aspect, but that is something that cannot be explained in words, but rather has to be experienced to believe.
 
 ## Target Audience
 
