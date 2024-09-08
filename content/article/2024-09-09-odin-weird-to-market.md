@@ -62,14 +62,14 @@ This is another problem. "Odin" can be thought of in a few different ways:
 
 When people speak of Python, they usually think of the entire ecosystem. I've worked with people who honestly thought Python was Numpy etc, and that you just had to download them. They had no distinction between any of the concepts, "Python" was just the "tool itself". Since I am an originally C programmer (and language designer), all of those distinctions are made obviously clear to me. There is no single C compiler, and they are all different. There stdlib is dreadful and you want to replace it with your own thing straightaway. But C still prevails.
 
-I make those distinctions because I believe it makes things a lot clearer about programming itself, and helps you understand what the flaws are in the tool; thus know what you can do to mitigate/workaround those issues. But this does require a higher quality standard that the norm.
+I make those distinctions because I believe it makes things a lot clearer about programming itself, and helps you understand what the flaws are in the tool; thus know what you can do to mitigate/workaround those issues. But this does require a higher quality standard that than of the norm.
 
 
 ## Funding
 
-Another issues is that Odin is _free_.
+Another issue is that Odin is _free_.
 
-As weird as it sounds but since about 20 years ago, it's nigh impossible to sell a compiler. People expect a programming language and compiler to free; without caring how much time, money, and effort that goes into building a tool.
+As weird as it sounds but since about 20 years ago, it's nigh impossible to sell a compiler. People expect a programming language and compiler to be free; without caring how much time, money, and effort that goes into building a tool.
 
 
 Odin does have a GitHub Sponsors page (https://github.com/sponsors/odin-lang/) but we make very little, and definitely not enough to pay anyone full-time yet. We will pay for the odd paid work when we have the money, but only for a few weeks here and there.
