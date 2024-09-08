@@ -26,7 +26,7 @@ Those languages with a "killer feature" to them do make them "standout" and cons
 
 [^big-idea]: [This bit is rhetorical; I won't reply to it]. Name a popular language out here today, and I can name the "killer feature" for that language and why it became popular because of it. People maybe complain about the "feature" after many years but it's what brought them to it.
 
-And before people say: "Odin's 'killer feature' is that it has none", how the heck do you market that? That seems like an anti-marketing feature. There isn't an example of a programming language out there which
+And before people say: "Odin's 'killer feature' is that it has none", how the heck do you market that? That seems like an anti-marketing feature. There isn't an example of a popular programming language out there which hasn't got a "killer feature", even C's was that in many way it is a "portable assembly" (even if that is not actually true).
 
 ## Hypeability
 
