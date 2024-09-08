@@ -20,7 +20,7 @@ tags:
 
 Odin is a weird programming language to advertise/market for.
 
-Odin is very pragmatic in terms of its design and overall philosophy. Unlike all popular languages out there, it has no "killer feature". I've tried to designed it to solve actual problems with actual solutions.
+Odin is very pragmatic in terms of its design and overall philosophy. Unlike all popular languages out there, it has no "killer feature". I've tried to design it to solve actual problems with actual solutions.
 
 Those languages with a "killer feature" to them do make them "standout" and consequentially more "hypeable". The problem is that those "killer features" are usually absolute nonsense, very niche, or they rarely have any big benefit. Hype doesn't make software better. Odin isn't a "big idea" language but rather make an alternative to C on modern systems; it tries to solve the problems that other systems languages have failed to address. The problems are usually small but unrelated to each other; not solveable with a single "big idea"[^big-idea].
 
