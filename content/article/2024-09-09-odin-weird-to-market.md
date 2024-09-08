@@ -49,7 +49,7 @@ And to be clear I don't want to make Odin "hypeable" in the first place. I am gl
 
 Another issue with advertising/marketing a systems-level programming language is that it is niche. It has manual memory management, high control over memory layout, [S](https://pkg.odin-lang.org/core/simd/)I[M](https://pkg.odin-lang.org/core/simd/x86/)D and [SOA](https://odin-lang.org/docs/overview/#soa-data-types) support, etc. Great for people who need that level of control, but not needed for the general webdev. Obviously that isn't the intended audience for Odin, but the problem is that in the social media landscape, those voices are the loudest and many will actually shutdown the voices of people who disagree with them just because they are not in the webdev domain.
 
-A minor issue that people are starting think that Odin is "just" for gamedev. It makes me laugh because gamedev is pretty much the most wide domain possible where you will do virtually every area of programming possible. So "just" is a huge compliment but clearly the wrong image. It's like saying C++ is "just" for gamedev, when obviously it can be used for anything. The same as Odin, because it's a systems programming language. Odin does bundle with many game/application oriented packages but they are just that: packages.
+A minor issue that people are starting to think that Odin is "just" for gamedev. It makes me laugh because gamedev is pretty much the most wide domain possible where you will do virtually every area of programming possible. So "just" is a huge compliment but clearly the wrong image. It's like saying C++ is "just" for gamedev, when obviously it can be used for anything. The same as Odin, because it's a systems programming language. Odin does bundle with many game/application oriented packages but they are just that: packages.
 
 ## Conceptual Thinking
 
@@ -60,7 +60,7 @@ This is another problem. "Odin" can be thought of in a few different ways:
 * The language+the+compiler+core library+vendor library
 * The entire ecosystem
 
-When people speak of Python, they usually think of the entire ecosystem. I've worked with people who honestly thought Python was Numpy etc, and that you just had to download them. They had no distinction between any of the concepts, "Python" was just the "tool itself". Since I am a C programming (and language designer), all of those distinctions are made obviously clear to me. There is no single C compiler, and they are all different. There stdlib is dreadful and you want to replace it with your own thing straightaway. But C still prevails.
+When people speak of Python, they usually think of the entire ecosystem. I've worked with people who honestly thought Python was Numpy etc, and that you just had to download them. They had no distinction between any of the concepts, "Python" was just the "tool itself". Since I am an originally C programmer (and language designer), all of those distinctions are made obviously clear to me. There is no single C compiler, and they are all different. There stdlib is dreadful and you want to replace it with your own thing straightaway. But C still prevails.
 
 I make those distinctions because I believe it makes things a clearer about programming itself, and helps you understand what the flaws are in the tool; thus know what you can do to mitigate/workaround those issues. But this does require a higher quality standard that the norm.
 
