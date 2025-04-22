@@ -22,6 +22,8 @@ I am not sure if I agree [that FOSS/OSS derives from the same thinking process a
 
 [^distinction]: I am making a distinction between OSS (Open Source Software) and FOSS (Free [and] Open Source Software) in this article but most of my critiques are related to both.
 
+## Physical Property vs Intellectual Property
+
 However the simplest argument (which is technically wrong) is due to what I already said: it's trivially copyable, and thus not really "property" in any traditional sense of that word. Software at the end of the day is a very complicated and complex implementation of an algorithm.
 
 [^piracy]: In the exact same way that Piracy is a different crime to Theft. Piracy is "intellectual property" infringement, and not the involuntary removal of physical property. Nor is piracy fraud nor an intentional tort (i.e. [conversion]https://en.wikipedia.org/wiki/Conversion_(law)).
@@ -31,6 +33,8 @@ It is neither _physical property_ nor _intellectual property_, the latter of whi
 There are a lot of oddities when it comes to copyright and trademark law, which are mostly done due to practicality rather than based on principles. A good example that recipes[^patents] cannot be copyrightable, but from a principled aspect there isn't any reason why not. Recipes have been passed around all over the place by numerous people over the years, so the origins are hard to trace, and even harder to enforce. This is why many industries have "trade secrets", to protect their place in industry. Letting people know your "secrets" means that they are "secrets" no more. Even legally (secret) recipes are classed as the same as "trade secrets".
 
 [^patents]: I'd argue [patents](https://en.wikipedia.org/wiki/Patent) are fundamentally in the same-ilk as "recipes", and software-patents even more so. I personally don't like patents that much except in a few cases, but I really do dislike software-patents with a passion. However that's a different topic for a different day.
+
+## "Net Benefit for Society"
 
 You could argue that letting people have more knowledge is a "net benefit for society" but that is the first-order thinking I am talking about. The assumption that "the truth with set you free" is adding the assumption that everyone should know it in the first place. I am not making a pseudo-[gnostic](https://en.wikipedia.org/wiki/Gnosticism) argument, but rather some secrets are best kept, well, secret. It also makes sense from a business sense too to not let your competitors know how you do things if you want some sort of technical advantage.
 
@@ -44,6 +48,8 @@ There is a reason the [XKCD 2347](https://xkcd.com/2347/) meme exists. People wi
 
 And I do run an Open Source (not FOSS) project: the [Odin Programming Language](https://odin-lang.org/). If there was a possibility of actually selling a compiler nowadays, I would, but because the expected price of a compiler for a new language is now free, it makes that nigh impossible. You have to either rely on charity or companies that rely on the product to pay for support. I am grateful for the amount of bug reports, Pull Requests, and general usage of Odin. It is extremely surreal that I work with a [company](https://jangafx.com/) that uses my language for all of their [products](https://jangafx.com/software/elemental-suite), and I get paid to do it. Some of my time is spent working on the Odin compiler and Odin core library, but a lot of it is actually just working on the products themselves. And that's what I made Odin for in the first place: a language I could actually program to make things in—a means to an end; not an end into itself.
 
+## Forced "Charity"
+
 There does seem to be a common feeling of guilt programmers have that they should give their knowledge to the world freely. But why are they feeling guilty? Is that a correctly placed emotion? Is that even valid? And why should you give your knowledge and wisdom away for free? Just because you got it for free?
 
 I could also add, but I am not going to make this argument in general, that FOSS is specifically "forcing charity" on others, which the act itself is not virtuous but vicious. This is why I assume the original poster is kind of saying this it similar to the "idealogy of communism", if I am guessing. He is viewing that as the "forced charity" aspect of the "ideology". It is also a very specific conception of _charity_, the view that charity is free-as-in-beer rather than a virtue of the friendship of man (or in the traditional theological conception, "the friendship of man for God"). A lot of _charity_ is "free" but a lot is not. You can still be beneficial to others whilst making a profit. There is nothing intrinsically wrong about making a profit in-itself[^unless]. I'd trivially argue that people who release their source code when you pay for it when they don't have to are still being charitable. Yes it does have a monetary cost, but that does not mean it isn't a form of charity. But OSS/FOSS as a practice encourages, not forces, by telling people ought to work for free and give the services for free.
@@ -56,10 +62,11 @@ The use a common cybernetics phrase ([POSIWID](https://en.wikipedia.org/wiki/The
 
 ----
 
+## Sustainability
+
 "Of course" you can hypothetically make money from OSS/FOSS but that doesn't mean it is either possible nor sustainable or even desirable. And I know this from first-hand experience. I am always grateful for all of the [donations received](https://github.com/sponsors/odin-lang) for the Odin programming language through people's act of charity, and all of that money does go towards the development of Odin. However, it's not a sustainable nor maintainable model—and I'd argue has never been nor could ever be. And for every purported exception to this rule, I'd try to argue none of them are because of the OSS/FOSS model and purely to the individual programmer/developer.
 
 The OSS/FOSS dream is that, a dream that cannot live up to its "ideals". For every hypothetical benefit it has, it should be state that it is a hypothesis and not a theory—theories require evidence to be classed as such. Most of the benefits and freedoms of OSS/FOSS are doubled-edge swords which are also huge attack vectors. Vectors for security, sustainability, maintainability, and redistribution. Most of the industry is based on blind-faith without anyway to verify that blind-trust.
-
 
 Regardless of whether I am correctly or incorrectly "defining" OSS/FOSS to your preferred "definition", the multi-order effects are rarely considered. And to bastardize [Lysander Spooner](https://en.wikipedia.org/wiki/Lysander_Spooner):
 
@@ -67,7 +74,9 @@ Regardless of whether I am correctly or incorrectly "defining" OSS/FOSS to your 
 
 [^spooner]: The original quote: "But whether the Constitution really be one thing, or another, this much is certain - that it has either authorized such a government as we have had, or has been powerless to prevent it. In either case it is unfit to exist.” — Lysander Spooner, No Treason: The Constitution of No Authority.
 
-All of these lists of ideals of essential freedoms—and I'd argue they are not principles in the slightest—have not aided in anything in the long run. To use the [FSF's list](https://en.wikipedia.org/wiki/The_Free_Software_Definition#The_Four_Essential_Freedoms_of_Free_Software) for example:
+## Ideals are not Principles
+
+All of these lists of ideals of essential freedoms—and I'd argue they are not principles in the slightest—have not aided in anything in the long run. To use the [GNU's list](https://en.wikipedia.org/wiki/The_Free_Software_Definition#The_Four_Essential_Freedoms_of_Free_Software) for example:
 
 
 * The freedom to run the program as you wish, for any purpose (freedom 0).
@@ -86,4 +95,6 @@ All of these lists of ideals of essential freedoms—and I'd argue they are not 
 
 As to my previous statement, none of these are _principles_. "Freedom 0" the foundation for the rest isn't even foundational. It pretty much relies on time preference between using pre-made software and home-made software. Software could be a service, but it's also, again, an implementation of an algorithm/idea. Of course I know these "ideals" only apply to _some_ FOSS advocates, and not necessarily any OSS advocates, but
 
-To conclude from this very unstructured brain-dump, I can understand the original sentiment that a lot of the mentality of advocating for OSS/FOSS is from a similar standpoint of the "ideology of communism", but I do not conceptualize it that way.
+## Conclusion
+
+To conclude from this very unstructured brain-dump, I can understand the original sentiment that a lot of the mentality of advocating for OSS/FOSS is from a similar standpoint of the "ideology of communism", but I do not conceptualize it that way. I don't think OSS nor FOSS has been a good thing for software, and probably a huge acceleration towards why software has been getting worse over the years.
