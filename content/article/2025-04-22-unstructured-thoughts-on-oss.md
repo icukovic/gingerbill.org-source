@@ -18,7 +18,7 @@ tags:
 
 **This is not a structured argument against FOSS/OSS but my uncommon thoughts on the topic.**
 
-I am not sure if I agree [that FOSS/OSS derives from the same thinking process as the ideology of communism], but I understand the sentiment. The fundamental issue is that software is trivially copyable. I have loads of issues with FOSS and OSS[^distinction]. And part of this "ideology" (as presented in the original post) is naïvety coupled with only first-order thinking and a poor understanding of _ownership_. Software isn't property in the normal sense of that word, so trying to apply the same rules to it is why it starts to break down; coupled with the first-order thinking that many FOSS advocates do, it leads do unsustainable practices and single sources of dependency failure.
+I am not sure if I agree [that FOSS/OSS derives from the same thinking process as the ideology of communism], but I understand the sentiment. The fundamental issue is that software is trivially copyable. I have loads of issues with FOSS and OSS[^distinction]. And part of this "ideology" (as presented in the original post) is naïvety coupled with only first-order thinking and a poor understanding of _ownership_. Software isn't property in the normal sense of that word, so trying to apply the same rules to it is why it starts to break down; coupled with the first-order thinking that many FOSS advocates do, it leads to unsustainable practices and single sources of dependency failure.
 
 [^distinction]: I am making a distinction between OSS (Open Source Software) and FOSS (Free [and] Open Source Software) in this article but most of my critiques are related to both.
 
