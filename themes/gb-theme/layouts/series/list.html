@@ -5,10 +5,11 @@
 {{ .Content }}
 <ul class="articles">
   {{ range (where .Data.Pages.Reverse "Section" "!=" "") }}
-  <li>
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-	{{ with .Description }} <p class="description">{{ . | markdownify }}</p>{{ end }}
-    <p class="date">{{ .Date.Format "2006-01-02" }}</p>
-  </li>{{ end }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+      {{ with .Description }} <p class="description">{{ . | markdownify }}</p>{{ end }}
+      <p class="date">{{ .Date.Format "2006-01-02" }}</p>
+    </li>
+  {{ end }}
 </ul>
 {{ partial "footer.html" . }}

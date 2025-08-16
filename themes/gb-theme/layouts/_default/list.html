@@ -4,11 +4,12 @@
 {{ end }}
 {{ .Content }}
 <ul class="articles">
-  {{ range (where .Data.Pages "Section" "==" "article") }}
-  <li>
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-	{{ with .Description }} <p class="description">{{ . | markdownify }}</p>{{ end }}
-    <p class="date">{{ .Date.Format "2006-01-02" }}</p>
-  </li>{{ end }}
+  {{ range where site.RegularPages "Type" "article" }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+      {{ with .Description }} <p class="description">{{ . | markdownify }}</p>{{ end }}
+      <p class="date">{{ .Date.Format "2006-01-02" }}</p>
+    </li>
+  {{ end }}
 </ul>
 {{ partial "footer.html" . }}

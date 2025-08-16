@@ -14,6 +14,20 @@
 	</div>
 </header>
 {{ .Content }}
+
+{{ if .Params.series}}
+	<nav style="display: flex; justify-content: space-between">
+		{{ with .PrevInSection}}
+			<a href="{{ .RelPermalink }}">Previous</a>
+		{{else}}
+			<span></span>
+		{{ end }}
+
+		{{ with .NextInSection}}
+			<a href="{{ .RelPermalink }}">Next</a>
+		{{ end }}
+	</nav>
+{{ end }}
 </article>
 </main>
 {{ partial "footer.html" . }}
